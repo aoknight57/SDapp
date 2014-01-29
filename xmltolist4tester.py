@@ -13,6 +13,10 @@ xmlfiledirectory = xmlmanager.filemapper()
 i = 0
 ndxncounter = 0
 dxncounter = 0
+bothcounter = 0
+eithercounter = 0
+notcounter = 0
+#nullxnlist = ([], [])
 for xmlfile in xmlfiledirectory: 
 	newxnlist = xmltolist4.form4testandparse(xmlfile)
 	ndxnlist += newxnlist[0]
@@ -21,11 +25,25 @@ for xmlfile in xmlfiledirectory:
 		ndxncounter += 1
 	if newxnlist[1] != []:
 		dxncounter += 1
+	if (newxnlist[0] != []) and (newxnlist[1] != []):
+		bothcounter += 1
+	if (newxnlist[0] != []) or (newxnlist[1] != []):
+		eithercounter += 1
+	if (newxnlist[0] == []) and (newxnlist[1] == []):
+		notcounter += 1
+		#newerrorchecker = xmltolist4.xnparse(xmlfile)
+		#nullxnlist += newerrorchecker
+		#if newerrorchecker[0] != [] or newerrorchecker[1] != []:
+		#	print xmlfile
 
 	i += 1
 
 print "how many times did the for loop run?"
 print i
+print "bothcounter", bothcounter
+print "eithercounter", eithercounter
+print "notcounter", notcounter
+#print "nullxnlist", nullxnlist
 print "how many times did we add to the deriv and nonderiv xn lists, respectively"
 print ndxncounter, dxncounter
 print "So what did the parser give us, let's print an indication"
