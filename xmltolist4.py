@@ -18,7 +18,10 @@ def floattextattribute(function):
 	return a
 
 		
-import xml.etree.ElementTree as ET
+try:
+	import xml.etree.cElementTree as ET
+except ImportError:
+	import xml.etree.ElementTree as ET
 
 
 def xnparse(xmlfilename):
@@ -44,6 +47,12 @@ def xnparse(xmlfilename):
 
 	# So first, make an empty list (which will be a list of transaction data lists, that is a 2d list)
 	NonDerivXns = []
+	#10b5-1 note detector (in the whole Form 4)
+	footnotenames = []
+	for fnotes in root.findall('footnotes'):
+		for fnote in fnotes.findall('footnote'):
+			if '10b5-1' in fnote.text:
+				footnotenames.append(fnote.get('id'))
 
 	#Now iterate over each non-deriv transaction
 	for child in root.findall('nonDerivativeTable'):
@@ -55,7 +64,7 @@ def xnparse(xmlfilename):
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err']
+					   'err', 'err', 0]
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -73,6 +82,11 @@ def xnparse(xmlfilename):
 			NonDerivXn[14] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
 			NonDerivXn[15] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
 			NonDerivXn[16] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
+			#10b5-1 transaction finder
+			for fnotereturn in child2.iter('footnoteId'):
+				fnotenumber = fnotereturn.get('id')
+				for fnotenumber in footnotenames:
+					NonDerivXn[17] = 1
 			#print NonDerivXn
 			NonDerivXns.append(NonDerivXn)
 
@@ -88,7 +102,8 @@ def xnparse(xmlfilename):
 			DerivXn = ['err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err']
+					   'err', 'err', 'err', 'err', 'err',
+					   0]
 			DerivXn[0] = textattribute(root.find('periodOfReport'))
 			DerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			DerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -109,6 +124,11 @@ def xnparse(xmlfilename):
 			DerivXn[17] = floattextattribute(child2.find('underlyingSecurity/underlyingSecurityShares/value'))
 			DerivXn[18] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
 			DerivXn[19] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
+			#10b5-1 transaction finder
+			for fnotereturn in child2.iter('footnoteId'):
+				fnotenumber = fnotereturn.get('id')
+				for fnotenumber in footnotenames:
+					DerivXn[20] = 1
 			#print DerivXn
 			DerivXns.append(DerivXn)
 
