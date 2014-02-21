@@ -16,7 +16,6 @@ def floattextattribute(function):
 		a = 'AttributeError'
 
 	return a
-
 		
 try:
 	import xml.etree.cElementTree as ET
@@ -53,7 +52,7 @@ def xnparse(xmlfilename):
 		for fnote in fnotes.findall('footnote'):
 			if '10b5-1' in fnote.text:
 				footnotenames.append(fnote.get('id'))
-
+	NonDerivXnNumber = 1
 	#Now iterate over each non-deriv transaction
 	for child in root.findall('nonDerivativeTable'):
 		#print "Found a child"
@@ -64,7 +63,7 @@ def xnparse(xmlfilename):
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 0]
+					   'err', 'err', 0, 'err']
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -87,11 +86,13 @@ def xnparse(xmlfilename):
 				fnotenumber = fnotereturn.get('id')
 				for fnotenumber in footnotenames:
 					NonDerivXn[17] = 1
+			NonDerivXn[18] = NonDerivXnNumber
+			NonDerivXnNumber += 1
 			#print NonDerivXn
 			NonDerivXns.append(NonDerivXn)
 
 	DerivXns = []
-
+	DerivXnNumber = 1
 	#Now iterate over each deriv transaction
 	for child in root.findall('derivativeTable'):
 	#	print "Found a child"
@@ -103,7 +104,7 @@ def xnparse(xmlfilename):
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
-					   0]
+					   0, 'err']
 			DerivXn[0] = textattribute(root.find('periodOfReport'))
 			DerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			DerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -129,6 +130,8 @@ def xnparse(xmlfilename):
 				fnotenumber = fnotereturn.get('id')
 				for fnotenumber in footnotenames:
 					DerivXn[20] = 1
+			DerivXn[21] = DerivXnNumber
+			DerivXnNumber += 1
 			#print DerivXn
 			DerivXns.append(DerivXn)
 

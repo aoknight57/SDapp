@@ -59,6 +59,30 @@ j = 0
 JohnCMartinNDXlist = []
 target = open("NonDerivXnFile.txt", 'w')
 target.truncate()
+#
+print>>target, """Derivative Transcation List Key:
+NonDerivXn[0] = Period Of Report
+NonDerivXn[1] = Issuer CIK
+NonDerivXn[2] = Reporting Owner CIK
+NonDerivXn[3] = Reporting Owner Name
+NonDerivXn[4] = Is the Reporting Owner a Director?
+NonDerivXn[5] = Is the Reporting Owner an Officer?
+NonDerivXn[6] = Is the Reporting Owner a Ten Percent Owner?
+NonDerivXn[7] = Is the Reporting Owner Something Else?
+NonDerivXn[8] = Reporting Owner Officer Title
+NonDerivXn[9] = Security Title
+NonDerivXn[10] = Transaction Date
+NonDerivXn[11] = Transaction Code
+NonDerivXn[12] = Shares in Transaction
+NonDerivXn[13] = Transaction Price Per Share
+NonDerivXn[14] = Transaction Acquired/Disposed Code
+NonDerivXn[15] = Shares Owned Following Transaction
+NonDerivXn[16] = Direct Or Indirect Ownership
+NonDerivXn[17] = 1 if a "10b5-1" footnote is present
+NonDerivXn[18] = Nonderivative Transaction Number (on that Form 4)
+
+"""
+#
 for entry in ndxnlist:
 	i += 1
 	
@@ -75,6 +99,31 @@ j = 0
 JohnCMartinDXlist = []
 target = open("DerivXnFile.txt", 'w')
 target.truncate()
+print>>target, """Derivative Transcation List Key:
+DerivXn[0] = Period Of Report
+DerivXn[1] = Issuer CIK
+DerivXn[2] = Reporting Owner CIK
+DerivXn[3] = Reporting Owner Name
+DerivXn[4] = Is the Reporting Owner a Director?
+DerivXn[5] = Is the Reporting Owner an Officer?
+DerivXn[6] = Is the Reporting Owner a Ten Percent Owner?
+DerivXn[7] = Is the Reporting Owner Something Else?
+DerivXn[8] = Reporting Owner Officer Title
+DerivXn[9] = Security Title
+DerivXn[10] = Transaction Date
+DerivXn[11] = Transaction Code
+DerivXn[12] = Shares in Transaction
+DerivXn[13] = Transaction Price Per Share
+DerivXn[14] = Transaction Acquired/Disposed Code
+DerivXn[15] = Expiration Date
+DerivXn[16] = Underlying Security Title
+DerivXn[17] = Underlying Security Shares
+DerivXn[18] = Shares Owned Following Transaction
+DerivXn[19] = Direct Or Indirect Ownership
+DerivXn[20] = 1 if a "10b5-1" footnote is present
+DerivXn[21] = Derivative Transaction Number (on that Form 4)
+
+"""
 for entry in dxnlist:
 	i += 1
 	
