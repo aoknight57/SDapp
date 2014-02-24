@@ -1,0 +1,36 @@
+0001274494
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 'None', 'None', 'None', 'None', 'None', 5, 8, 'None', 'None']
+ 
+['James A. Hughes', '', '', '', '', '', 41856.0, 1291676.0, '', '']
+['James A. Hughes', '', '', '', '', '', 500000.0, 15430000.0, '', '']
+['Mark R. Widmar', '', '', '', '', '', 11232.0, 346620.0, '', '']
+['Mark R. Widmar', '', '', '', '', '', 57847.0, 1785158.0, '', '']
+['Mark R. Widmar', '', '', '', '', '', 49701.0, 1533773.0, '', '']
+['Mark R. Widmar', '', '', '', '', '', 265000.0, 8177900.0, '', '']
+['Georges J. Antoun', '', '', '', '', '', 65446.0, 2019664.0, '', '']
+['Georges J. Antoun', '', '', '', '', '', 265000.0, 8177900.0, '', '']
+['James G. Brown', '', '', '', '', '', 352.0, 10863.0, '', '']
+['James G. Brown', '', '', '', '', '', 3003.0, 92673.0, '', '']
+['James G. Brown', '', '', '', '', '', 5040.0, 155534.0, '', '']
+['James G. Brown', '', '', '', '', '', 7500.0, 231450.0, '', '']
+['James G. Brown', '', '', '', '', '', 7500.0, 231450.0, '', '']
+['James G. Brown', '', '', '', '', '', 22734.0, 701571.0, '', '']
+['James G. Brown', '', '', '', '', '', 25909.0, 799552.0, '', '']
+['James G. Brown', '', '', '', '', '', 135000.0, 4166100.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 3076.0, 94925.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 4953.0, 152850.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 6462.0, 199417.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 40405.0, 1246898.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 27612.0, 852106.0, '', '']
+['Mary Beth Gustafsson', '', '', '', '', '', 135000.0, 4166100.0, '', '']

@@ -1,0 +1,24 @@
+0000104169
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+ 
+['Michael T. Duke', '', '', '', '', '', 315153.0, 22044952.0, 510400.0, 35702480.0]
+['Michael T. Duke', 53.35, '', '', '', '1/02/2015', '', '', '', '']
+['Michael T. Duke', 45.69, '', '', '', '1/04/2016', '', '', '', '']
+['Michael T. Duke', 47.96, '', '', '', '1/21/2017', '', '', '', '']
+['Charles M. Holley, Jr.', '', '', '', '', '', 79307.0, 5547525.0, 114677.0, 8021656.0]
+['William S. Simon', '', '', '', '', '', 127050.0, 8887148.0, 216438.0, 15139838.0]
+['C.DouglasMcMillon', '', '', '', '', '', 150005.0, 10492850.0, 242957.0, 16994842.0]
+['C.DouglasMcMillon', 47.96, '', '', '', '1/21/2017', '', '', '', '']
+['Rosalind G. Brewer', '', '', '', '', '', 106829.0, 7472689.0, 127691.0, 8931985.0]
+['Rosalind G. Brewer', 47.26, '', '', '', '3/11/2017', '', '', '', '']

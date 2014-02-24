@@ -1,0 +1,764 @@
+<table style="margin-top:3pt; margin-bottom:12pt; padding-left: 8.5pt; font-family:Arial; font-size:10pt;" cellspacing="0" align="center" width="100%" cellpadding="2" frame="void">
+<tr>
+<td rowspan="2" colspan="1" width="141.50551181102364" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="left">
+<b>Name</b>
+</p>
+
+</td><td rowspan="1" colspan="5" width="NaN" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="center">
+<b>Option Awards</b>
+</p>
+
+</td><td rowspan="2" colspan="1" width="6" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="center">
+<b>&nbsp;</b>
+</p>
+
+</td><td rowspan="1" colspan="4" width="NaN" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="center">
+<b>Stock Awards</b>
+</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Number of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Securities </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Underlying </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unexercised </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Options (#) </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Exercisable</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Number of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Securities </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Underlying </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unexercised </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Options (#) </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unexercisable</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Equity Incentive </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Plan&nbsp;Awards: </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Number of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Securities </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Underlying </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unexercised </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unearned </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Options  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>(#)</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Option </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Exercise </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Price  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>($)</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Option </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Expiration </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Date</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Number of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Shares&nbsp;or </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Units of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Stock That </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Have Not </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Vested  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>(#)&nbsp;<sup>(1)</sup>
+</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Market </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Value of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Shares or </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Units of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Stock That </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Have Not </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Vested  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>($)&nbsp;<sup>(2)</sup>
+</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Equity </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Incentive&nbsp;Plan </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Awards: </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Number of </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Unearned </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Shares, Units </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>or Other Rights </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>That Have Not </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Vested  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>(#)&nbsp;<sup>(3)</sup>
+</b>
+</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1.5pt solid #000000; padding-right:0pt;" valign="bottom">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Equity </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Incentive&nbsp;Plan </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Awards: Market </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>or Payout Value </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>of Unearned </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Shares, Units </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>or Other Rights </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>That Have Not </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>Vested  </b>
+</p>
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt;" align="right">
+<b>($)&nbsp;<sup>(2)</sup>
+</b>
+</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="4" colspan="1" width="141.50551181102364" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:baseline;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="left">Michael T. Duke</p>
+
+</td><td rowspan="1" colspan="1" width="92.59842519685024" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">124,050</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">52.12</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/04/2014</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">315,153</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">22,044,952</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">510,400</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">35,702,480</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">74,013</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">53.35</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/02/2015</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">118,188</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">45.69</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/04/2016</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">125,104</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">47.96</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/21/2017</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="141.50551181102364" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:baseline;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="left">Charles M. Holley, Jr.</p>
+
+</td><td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">79,307</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">5,547,525</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">114,677</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1pt solid #000000; background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">8,021,656</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="141.50551181102364" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:baseline;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="left">William S. Simon</p>
+
+</td><td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">127,050</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">8,887,148</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">216,438</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">15,139,838</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="2" colspan="1" width="141.50551181102364" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:baseline;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="left">C.&nbsp;Douglas&nbsp;McMillon</p>
+
+</td><td rowspan="1" colspan="1" width="92.59842519685024" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">15,660</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">45.69</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/04/2016</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">150,005</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">10,492,850</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">242,957</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">16,994,842</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">75,063</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">47.96</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">1/21/2017</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="2" colspan="1" width="141.50551181102364" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:baseline;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="left">Rosalind G. Brewer</p>
+
+</td><td rowspan="1" colspan="1" width="92.59842519685024" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">8,071</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">48.32</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">10/14/2016</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">106,829</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">7,472,689</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">127,691</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="background-color:#D9EBF6; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">8,931,985</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1" width="92.59842519685024" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">2,723</p>
+
+</td><td rowspan="1" colspan="1" width="103.46456692913385" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="119.05511811023625" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="65.19685039370084" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">47.26</p>
+
+</td><td rowspan="1" colspan="1" width="87.8740157480314" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">3/11/2017</p>
+
+</td><td rowspan="1" colspan="1" width="6" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="92.740157480315" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="85.03937007874013" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="113.38582677165356" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td><td rowspan="1" colspan="1" width="116.50393700787366" style="border-bottom:1.5pt solid #000000; padding-right:0pt;vertical-align:bottom;" valign="">
+
+<p style="margin: 0pt; line-height: 11.5pt; font-family: Arial; font-size: 9pt; color: #000000" align="right">&nbsp;</p>
+
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="11" width="NaN" style="vertical-align:text-top; " valign="top">
+
+<p align="justify" style="margin: 0pt; margin-bottom:-11.5pt; line-height:11.5pt; font-family: Arial; font-style: normal; font-size: 9pt;">(1)	</p>
+<p align="justify" style="margin: 0pt; margin-bottom:2.5pt; padding-left: 20pt; line-height:11.5pt; font-family: Arial; font-style: normal; font-size: 9pt;">The numbers in this column include Shares of restricted stock with service-based vesting requirements. These Shares of restricted stock are scheduled to vest in amounts and on the dates shown in the following table.</p>
+
+</td>
+</tr>
+</table>

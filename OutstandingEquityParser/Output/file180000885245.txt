@@ -1,0 +1,19 @@
+0000885245
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 2, 3, 4, 5, 6, 8, 9, 10, 11]
+ 
+['Dennis H. Nelson', 0.0, 0.0, 0.0, 'N/A', 'N/A', 157500.0, 7407225.0, 0.0, 0.0]
+['Karen B. Rhoads', 0.0, 0.0, 0.0, 'N/A', 'N/A', 26250.0, 1234538.0, 0.0, 0.0]
+['Patricia K. Whisler', 0.0, 0.0, 0.0, 'N/A', 'N/A', 26250.0, 1234538.0, 0.0, 0.0]
+['Brett P. Milkie', 0.0, 0.0, 0.0, 'N/A', 'N/A', 26250.0, 1234538.0, 0.0, 0.0]
+['Kari G. Smith', 0.0, 0.0, 0.0, 'N/A', 'N/A', 26250.0, 1234538.0, 0.0, 0.0]

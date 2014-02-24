@@ -1,0 +1,24 @@
+0001467858
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 4, 6, 8, 10, 12, 17, 19, 21, 24]
+ 
+['Option Awards', '', '', '', '', '', '', '', '', '']
+['Daniel F. Akerson', '', '', '', '', '', '', 76249.0, '', 2198259.0]
+['Daniel F. Akerson', '', '', '', '', '', '', 18478.0, '', 532721.0]
+['Daniel\nAmmann', '', '', '', '', '', '', 53374.0, '', 1538772.0]
+['Stephen J. Girsky', '', '', '', '', '', '', 57187.0, '', 1648701.0]
+['Stephen J. Girsky', '', '', '', '', '', '', 41575.0, '', 1198607.0]
+['Mary T.\nBarra', '', '', '', '', '', '', 53374.0, '', 1538772.0]
+['Timothy E. Lee', '', '', '', '', '', '', 44415.0, '', 1280484.0]
+['Timothy E. Lee', '', '', '', '', '', '', 24021.0, '', 692525.0]
+['Timothy E. Lee', '', '', '', '', '', '', 30375.0, '', 875711.0]

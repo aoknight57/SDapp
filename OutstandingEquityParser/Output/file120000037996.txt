@@ -1,0 +1,51 @@
+0000037996
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+['Alan Mulally', '', '', '', '', '', 919750.0, 11910763.0, 1143931.0, 14813906.0]
+['Alan Mulally', 291862.0, 592571.0, '', 14.76, '03/02/2021', '', '', '', '']
+['Alan Mulally', 686545.0, 353676.0, '', 12.69, '03/02/2020', '', '', '', '']
+['Alan Mulally', 4948978.0, '', '', 1.96, '03/10/2019', '', '', '', '']
+['Alan Mulally', 3544975.0, '', '', 6.14, '03/04/2018', '', '', '', '']
+['Alan Mulally', 1640937.0, '', '', 7.55, '03/04/2017', '', '', '', '']
+['Alan Mulally', 3000000.0, '', '', 8.28, '08/31/2016', '', '', '', '']
+['Robert L. Shanks', '', '', '', '', '', 35265.0, 456682.0, 72231.0, 935391.0]
+['Robert L. Shanks', 10895.0, 22123.0, '', 14.76, '03/02/2021', '', '', '', '']
+['Robert L. Shanks', 26545.0, 13676.0, '', 12.69, '03/02/2020', '', '', '', '']
+['Robert L. Shanks', 188118.0, '', '', 1.96, '03/10/2019', '', '', '', '']
+['Robert L. Shanks', 88641.0, '', '', 6.14, '03/04/2018', '', '', '', '']
+['Robert L. Shanks', 41283.0, '', '', 7.55, '03/04/2017', '', '', '', '']
+['Robert L. Shanks', 15655.0, '', '', 7.83, '03/09/2016', '', '', '', '']
+['Robert L. Shanks', 22000.0, '', '', 12.49, '03/10/2015', '', '', '', '']
+['Robert L. Shanks', 30000.0, '', '', 13.26, '03/11/2014', '', '', '', '']
+['William Clay Ford, Jr.', '', '', '', '', '', 431831.0, 5592211.0, 280898.0, 3637629.0]
+['William Clay Ford, Jr.', 136202.0, 276533.0, '', 14.76, '03/02/2021', '', '', '', '']
+['William Clay Ford, Jr.', 871697.0, 449057.0, '', 12.98, '08/04/2020', '', '', '', '']
+['William Clay Ford, Jr.', 320387.0, 165049.0, '', 12.69, '03/02/2020', '', '', '', '']
+['William Clay Ford, Jr.', 3470000.0, '', '', 2.84, '03/26/2019', '', '', '', '']
+['William Clay Ford, Jr.', 1685393.0, '', '', 12.49, '03/10/2015', '', '', '', '']
+['William Clay Ford, Jr.', 1587301.0, '', '', 16.49, '01/04/2014', '', '', '', '']
+['William Clay Ford, Jr.', 62396.0, '', '', 15.98, '12/30/2013', '', '', '', '']
+['Mark Fields', '', '', '', '', '', 145989.0, 1890558.0, 257659.0, 3336684.0]
+['Mark Fields', 42806.0, 86910.0, '', 14.76, '03/02/2021', '', '', '', '']
+['Mark Fields', 113508.0, 58475.0, '', 12.69, '03/02/2020', '', '', '', '']
+['Mark Fields', 701453.0, '', '', 1.96, '03/10/2019', '', '', '', '']
+['Mark Fields', 361059.0, '', '', 6.14, '03/04/2018', '', '', '', '']
+['Mark Fields', 1182341.0, '', '', 7.55, '03/04/2017', '', '', '', '']
+['James D. Farley', '', '', '', '', '', 77739.0, 1006720.0, 161818.0, 2095543.0]
+['James D. Farley', 29186.0, 59257.0, '', 14.76, '03/02/2021', '', '', '', '']
+['James D. Farley', 50345.0, 25937.0, '', 12.69, '03/02/2020', '', '', '', '']
+['L. W. K. Booth', '', '', '', '', '', 145611.0, 1885662.0, 135501.0, 1754738.0]
+['L. W. K. Booth', 113508.0, 58475.0, '', 12.69, '03/02/2020', '', '', '', '']
+['L. W. K. Booth', 701453.0, '', '', 1.96, '03/10/2019', '', '', '', '']
+['L. W. K. Booth', 742296.0, '', '', 7.55, '03/04/2017', '', '', '', '']

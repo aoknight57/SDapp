@@ -1,0 +1,50 @@
+0000882095
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 2, 5, 8, 11, 14, 17, 20, 23, 26]
+ 
+['John C. Martin', 3386904.0, '', '', 7.63, '1/28/2014', '', '', '', '']
+['John C. Martin', 1687508.0, '', '', 8.01, '1/26/2015', '', '', '', '']
+['John C. Martin', 1800000.0, '', '', 14.5, '1/25/2016', '', '', '', '']
+['John C. Martin', 1200000.0, '', '', 16.4, '1/22/2017', '', '', '', '']
+['John C. Martin', 836000.0, 44000.0, '', 21.58, '1/30/2018', '', '', '', '']
+['John C. Martin', 450000.0, 150000.0, '', 23.6, '1/21/2019', '', '', '', '']
+['John C. Martin', 349800.0, 286200.0, '', 23.76, '1/28/2020', '', '', '', '']
+['John C. Martin', 376250.0, 483750.0, '', 19.09, '1/20/2021', '', '', '', '']
+['John C. Martin', '', 662000.0, '', 24.3, '1/26/2022', '', '', '', '']
+['John C. Martin', '', '', '', '', '', 106000.0, 3892850.0, '', '']
+['John C. Martin', '', '', '', '', '', '', '', 288000.0, 10576800.0]
+['John C. Martin', '', '', '', '', '', 78000.0, 2864550.0, 117000.0, 4296825.0]
+['Robin L Washington', 45000.0, 20000.0, '', 27.07, '5/7/2018', '', '', '', '']
+['Robin L Washington', '', 25000.0, '', 23.6, '1/21/2019', '', '', '', '']
+['Robin L Washington', '', 21000.0, '', 24.91, '7/29/2019', '', '', '', '']
+['Robin L Washington', '', 43200.0, '', 23.76, '1/28/2020', '', '', '', '']
+['Robin L Washington', '', 103950.0, '', 19.09, '1/20/2021', '', '', '', '']
+['Robin L Washington', '', 180000.0, '', 24.3, '1/26/2022', '', '', '', '']
+['Robin L Washington', '', '', '', '', '', 18000.0, 661050.0, '', '']
+['Robin L Washington', '', '', '', '', '', 18000.0, 661050.0, '', '']
+['Robin L Washington', '', '', '', '', '', '', '', 61600.0, 2262260.0]
+['Robin L Washington', '', '', '', '', '', 20000.0, 734500.0, 30000.0, 1101750.0]
+['John F. Milligan', 1200000.0, '', '', 7.63, '1/28/2014', '', '', '', '']
+['John F. Milligan', 700000.0, '', '', 8.01, '1/26/2015', '', '', '', '']
+['John F. Milligan', 800000.0, '', '', 14.5, '1/25/2016', '', '', '', '']
+['John F. Milligan', 560000.0, '', '', 16.4, '1/22/2017', '', '', '', '']
+['John F. Milligan', 140000.0, '', '', 20.74, '5/8/2017', '', '', '', '']
+['John F. Milligan', 304000.0, 16000.0, '', 21.58, '1/30/2018', '', '', '', '']
+['John F. Milligan', 72000.0, 8000.0, '', 27.07, '5/7/2018', '', '', '', '']
+['John F. Milligan', 210000.0, 70000.0, '', 23.6, '1/21/2019', '', '', '', '']
+['John F. Milligan', 154000.0, 126000.0, '', 23.76, '1/28/2020', '', '', '', '']
+['John F. Milligan', 168000.0, 216000.0, '', 19.09, '1/20/2021', '', '', '', '']
+['John F. Milligan', '', 302500.0, '', 24.3, '1/26/2022', '', '', '', '']
+['John F. Milligan', '', '', '', '', '', 49000.0, 1799525.0, '', '']
+['John F. Milligan', '', '', '', '', '', '', '', 127200.0, 4671420.0]
+['John F. Milligan', '', '', '', '', '', 34164.0, 1254673.0, 51250.0, 1882156.0]

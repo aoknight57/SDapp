@@ -1,0 +1,36 @@
+0001326801
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 5, 8, 'None', 11, 14, 17, 20, 'None', 'None']
+ 
+['Mark Zuckerberg', 60000000.0, '', '', 0.06, '11/7/2015', '', '', '', '']
+['Sheryl K. Sandberg', '', '', '', '', '', 2795615.0, 74419271.0, '', '']
+['Sheryl K. Sandberg', '', 3500000.0, '', 10.39, '7/22/2020', '', '', '', '']
+['Sheryl K. Sandberg', '', 1200000.0, '', 15.0, '10/17/2020', '', '', '', '']
+['Sheryl K. Sandberg', '', '', '', '', '', '', '', '', '']
+['Sheryl K. Sandberg', '', '', '', '', '', '', '', '', '']
+['David A. Ebersman', 2925000.0, 1575000.0, '', 3.23, '10/25/2019', '', '', '', '']
+['David A. Ebersman', '', '', '', '', '', '', '', '', '']
+['David A. Ebersman', '', '', '', '', '', '', '', '', '']
+['David A. Ebersman', '', '', '', '', '', '', '', '', '']
+['David B. Fischer', '', '', '', '', '', 1179475.0, 31397625.0, '', '']
+['David B. Fischer', '', '', '', '', '', '', '', '', '']
+['David B. Fischer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', 1268510.0, 228235.0, '', 1.85, '1/11/2019', '', '', '', '']
+['Mike Schroepfer', 482878.0, 160477.0, '', 1.85, '1/11/2019', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', 768750.0, 356250.0, '', 2.95, '8/18/2019', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']
+['Mike Schroepfer', '', '', '', '', '', '', '', '', '']

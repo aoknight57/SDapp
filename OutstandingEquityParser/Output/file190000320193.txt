@@ -1,0 +1,28 @@
+0000320193
+Headings Corresponding to List Entries
+name
+number of securities underlying unexercised options # exercisable
+number of securities underlying unexercised options # unexercisable
+equity incentive plan awards: number of securities underlying unexercised unearned options #
+option exercise price $
+option expiration date
+number of shares or units of stock that have not vested #
+market value of shares or units of stock that have not vested #
+equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+[0, 'None', 'None', 'None', 'None', 'None', 5, 8, 'None', 'None']
+ 
+['Timothy Cook', '', '', '', '', '', 125000.0, 83388125.0, '', '']
+['Timothy Cook', '', '', '', '', '', 1000000.0, 667105000.0, '', '']
+['Peter Oppenheimer', '', '', '', '', '', 100000.0, 66710500.0, '', '']
+['Peter Oppenheimer', '', '', '', '', '', 150000.0, 100065750.0, '', '']
+['Robert Mansfield', '', '', '', '', '', 100000.0, 66710500.0, '', '']
+['Robert Mansfield', '', '', '', '', '', 75000.0, 50032875.0, '', '']
+['Robert Mansfield', '', '', '', '', '', 43778.0, 29204523.0, '', '']
+['Bruce Sewell', '', '', '', '', '', 25000.0, 16677625.0, '', '']
+['Bruce Sewell', '', '', '', '', '', 100000.0, 66710500.0, '', '']
+['Bruce Sewell', '', '', '', '', '', 150000.0, 100065750.0, '', '']
+['Jeffrey Williams', '', '', '', '', '', 3750.0, 2501644.0, '', '']
+['Jeffrey Williams', '', '', '', '', '', 11250.0, 7504931.0, '', '']
+['Jeffrey Williams', '', '', '', '', '', 100000.0, 66710500.0, '', '']
+['Jeffrey Williams', '', '', '', '', '', 150000.0, 100065750.0, '', '']
