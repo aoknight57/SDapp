@@ -1,8 +1,8 @@
 from ftplib import FTP
 import os
-
-
-
+# This pulls all the GILD Form 4s.  It wouldn't be too hard to generalize
+# it to any ticker.  Word to the wise, it takes about 10 minutes to run on my
+# machine.  Also, it spits errors into the terminal but this could be changed.
 ftpbasedirectory = "/edgar/data/882095"
 
 try:
