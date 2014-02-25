@@ -1,7 +1,9 @@
 # To do:
-# Fix the problem in GM where the number for the second to last column are read
-# as number for the third to last column.  Focus on pairing second to last and last columns
-# same with third to last and fourth to last
+# 1. Fix the failure to detect some of the FB stock awards
+# 2. Figure out how to handle the circumstances where the header is garbled
+# 	 and the columns are out of order -- need to detect this error and try to
+#	 fix it (start with evaluating cell formats for clues)
+
 
 import os
 

@@ -4,7 +4,7 @@ import os
 # it to any ticker.  Word to the wise, it takes about 10 minutes to run on my
 # machine.  Also, it spits errors into the terminal but this could be changed.
 ftpbasedirectory = "/edgar/data/882095"
-#test change
+
 try:
 	ftp = FTP('ftp.sec.gov') 
 	ftp.login('anonymous', #'ENTEREMAILADDRESS')

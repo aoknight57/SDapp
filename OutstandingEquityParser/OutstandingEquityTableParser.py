@@ -569,6 +569,41 @@ def RowParser(self, headingindex, startrow, headingrowlength, \
 		resulttable.append(resultrow)
 	return resulttable
 
+# Error correction this function takes information on related columns.
+# e.g. last cell and second to last cell must coexist, therefore,
+# if the last cell and third to last cell are filled and the second
+# to last row is empty, makes sense to assume the parser mistakenly 
+# pulled the second to last value as the third to last -- this function
+# corrects that problem
+
+
+def BadRowStripper(matrix, properlength, minimumvalues):
+	newmatrix = []
+	for row in matrix:
+		if len(row) == properlength and \
+		row.count('') <= properlength - minimumvalues:
+			newmatrix.append(row)
+		if len(row) != properlength:
+			print "Row is wrong length, so removed  : ", row
+		if row.count('') > properlength - minimumvalues:
+			print "Row has too few values so removed: ", row
+	return newmatrix
+
+
+def PairErrorCorrect(matrix, dominantcol, dominantpartner, mistakencol):
+	for row in matrix:
+		if len(row) == 10:
+			if row[dominantcol] != '' and \
+			row[dominantpartner] == '' and \
+			row[mistakencol] != '':
+				row[dominantpartner], row[mistakencol] = row[mistakencol], row[dominantpartner]
+				print "Fixed row order for: ", row
+	return matrix
+
+
+#
+# Main program starts here
+#
 CIKs = []
 TablesFromFiles = []
 rawfilemap = rawfilemapper()
@@ -688,6 +723,9 @@ for htmlfile in htmlmap:
 	rowparseresults = RowParser(parsematrix, c[0], c[2], c[3], \
 								SweepClassification, numberandindexoflines[0], \
 								thetabletypes, headingformats)
+	rowparseresults = BadRowStripper(rowparseresults, 10, 3)
+	rowparseresults = PairErrorCorrect(rowparseresults, 9, 8, 7)
+	rowparseresults = PairErrorCorrect(rowparseresults, 6, 7, 8)
 
 	CIK = htmlfile[len(htmlfile)-14:len(htmlfile)-4]
 	outputtarget = open((MainFolderLocation + "Output/" + "file" + \
