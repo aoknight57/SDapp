@@ -17,26 +17,31 @@ bothcounter = 0
 eithercounter = 0
 notcounter = 0
 #nullxnlist = ([], [])
+parseerrorlist = []
 for xmlfile in xmlfiledirectory: 
-	newxnlist = xmltolist4.form4testandparse(xmlfile)
-	ndxnlist += newxnlist[0]
-	dxnlist	+= newxnlist[1]
-	if newxnlist[0] != []:
-		ndxncounter += 1
-	if newxnlist[1] != []:
-		dxncounter += 1
-	if (newxnlist[0] != []) and (newxnlist[1] != []):
-		bothcounter += 1
-	if (newxnlist[0] != []) or (newxnlist[1] != []):
-		eithercounter += 1
-	if (newxnlist[0] == []) and (newxnlist[1] == []):
-		notcounter += 1
-		#newerrorchecker = xmltolist4.xnparse(xmlfile)
-		#nullxnlist += newerrorchecker
-		#if newerrorchecker[0] != [] or newerrorchecker[1] != []:
-		#	print xmlfile
+	try:
+		newxnlist = xmltolist4.form4testandparse(xmlfile)
+		ndxnlist += newxnlist[0]
+		dxnlist	+= newxnlist[1]
+		if newxnlist[0] != []:
+			ndxncounter += 1
+		if newxnlist[1] != []:
+			dxncounter += 1
+		if (newxnlist[0] != []) and (newxnlist[1] != []):
+			bothcounter += 1
+		if (newxnlist[0] != []) or (newxnlist[1] != []):
+			eithercounter += 1
+		if (newxnlist[0] == []) and (newxnlist[1] == []):
+			notcounter += 1
+			#newerrorchecker = xmltolist4.xnparse(xmlfile)
+			#nullxnlist += newerrorchecker
+			#if newerrorchecker[0] != [] or newerrorchecker[1] != []:
+			#	print xmlfile
 
-	i += 1
+		i += 1
+	except:
+		parseerrorlist.append(xmlfile)
+
 
 print "how many times did the for loop run?"
 print i
@@ -52,6 +57,7 @@ print len(ndxnlist)
 print "Here is the length of the derivative transaction list: ",
 print len(dxnlist)
 print ndxnlist[1][2]
+print "Here are the files that triggered parsing errors and were omitted:", parseerrorlist
 print "Let's save John C. Martin's entries, his CIK is: 0001190578"
 #NonDeriv xn file for John C. Martin
 i = 0
