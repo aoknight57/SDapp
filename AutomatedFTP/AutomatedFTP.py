@@ -101,26 +101,14 @@ for filename in os.listdir(indexdirectory):
 print "We will work with the CIKs in the stored CIK file" 
 print ''
 
-print "We'll work with form 4"
-
-# print "What form would you like to use?"
-# print "Also, just press enter for form 4" 
-# form = raw_input()
-# if form == "":
-# 	form = 4 
-form = 4
-
-#indexfilelist = []
-#
-#for root, dirs, files in os.walk(cwd + "/FilingIndices"):
-# 	for indexfile in files: 		
-#		if indexfile.endswith('.txt'):
-#			indexfilelist.append(os.path.join(root, indexfile))
-#print indexfilelist
 
 
-
-
+print "What form would you like to use?"
+print "Also, just press enter for form 4" 
+form = raw_input()
+if form == "":
+	form = 4 
+print "We'll work with form", form
 
 
 
@@ -286,7 +274,7 @@ print "Now lets generate the list of forms we need from the indices we have."
 
 
 for CIK in CIKs:
-
+	print "\t Working on:", CIK
 	target = open(cwd + '/' + "storage/" + str(CIK) + '/' + str(CIK) + 'form' + str(form) + '.txt', 'w')	
 #	formfilelist = []
 	
@@ -294,7 +282,7 @@ for CIK in CIKs:
 	for index in indexfilelist:
 		with open(index) as infile:
 			for line in infile:
-				if line.find(str(form)+'  ') == 0 and line.find(str(CIK)) != -1:
+				if line.find(str(form)+'  ') == 0 and line.find(' ' + str(CIK) + ' ') != -1:
 					formfilename = line[line.find("edgar/data/"):len(line)]
 					formfilename = formfilename.rstrip()
 					
