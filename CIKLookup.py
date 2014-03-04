@@ -1,5 +1,5 @@
 import requests
-
+# This requires requests, which can be installed via pip using "pip install requests" (http://docs.python-requests.org/en/latest/user/install/#install for info)
 def CIKFind(ticker):
 
 	url = 'http://www.sec.gov/cgi-bin/browse-edgar?company=&match=&CIK=%s&owner=exclude&Find=Find+Companies&action=getcompany' % ticker
