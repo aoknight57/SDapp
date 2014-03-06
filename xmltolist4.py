@@ -68,9 +68,10 @@ def xn4parse(xmlfilename):
 		for  child2 in child.findall('nonDerivativeTransaction'):
 			#print "Found a grandchild"
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err',    0,  'err', 'err']
+						  'err', 'err', 'err', 'err', 'err',
+						  'err', 'err', 'err', 'err', 'err',
+						  'err', 'err',    0,  'err', 'err',
+						  'plh', 'plh', 'plh',   '4']
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -114,6 +115,7 @@ def xn4parse(xmlfilename):
 					NonDerivXn[17] = 1
 			NonDerivXn[18] = NonDerivXnNumber
 			NonDerivXn[19] = xmlfilename[lencwd:]
+
 			NonDerivXnNumber += 1
 			#print NonDerivXn
 			NonDerivXns.append(NonDerivXn)
@@ -131,7 +133,8 @@ def xn4parse(xmlfilename):
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
-					   'err',    0,  'err', 'err']
+					   'err',    0,  'err', 'err', 'plh',
+					   'plh', 'plh',   '4']
 			DerivXn[0] = textattribute(root.find('periodOfReport'))
 			DerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			DerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -191,6 +194,7 @@ def xn4parse(xmlfilename):
 					DerivXn[21] = 1
 			DerivXn[22] = DerivXnNumber
 			DerivXn[23] = xmlfilename[lencwd:]
+
 			DerivXnNumber += 1
 			#print DerivXn
 			DerivXns.append(DerivXn)
@@ -226,10 +230,10 @@ def xn5parse(xmlfilename):
 		for  child2 in child.findall('nonDerivativeTransaction'):
 			#print "Found a grandchild"
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'err',    0,  'err', 'err', 
-					   'err', 'err', 'err']
+						  'err', 'err', 'err', 'err', 'err',
+						  'err', 'err', 'err', 'err', 'err',
+						  'err', 'err',    0,  'err', 'err', 
+						  'err', 'err', 'err',   '5']
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -295,7 +299,7 @@ def xn5parse(xmlfilename):
 					   'err', 'err', 'err', 'err', 'err',
 					   'err', 'err', 'err', 'err', 'err',
 					   'err',    0,  'err', 'err', 'err'
-					   'err', 'err']
+					   'err', 'err',   '5']
 			DerivXn[0] = textattribute(root.find('periodOfReport'))
 			DerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			DerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -415,9 +419,10 @@ def xn3parse(xmlfilename):
 		for  child2 in child.findall('nonDerivativeHolding'):
 			#print "Found a grandchild"
 			NonDerivH = ['err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'plh', 'plh', 'plh', 'plh', 'plh',
-					   'err', 'err',    0,  'err', 'err']
+						 'err', 'err', 'err', 'err', 'err',
+						 'plh', 'plh', 'plh', 'plh', 'plh',
+						 'err', 'err',    0,  'err', 'err',
+						 'plh', 'plh', 'plh',   '3']
 			NonDerivH[0] = textattribute(root.find('periodOfReport'))
 			NonDerivH[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivH[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -477,10 +482,11 @@ def xn3parse(xmlfilename):
 		for  child2 in child.findall('derivativeHolding'):
 	#		print "Found a grandchild"
 			DerivH = ['err', 'err', 'err', 'err', 'err',
-					   'err', 'err', 'err', 'err', 'err',
-					   'err', 'plh', 'plh', 'plh', 'plh',
-					   'plh', 'err', 'err', 'err', 'plh',
-					   'err',    0,  'err', 'err']
+					  'err', 'err', 'err', 'err', 'err',
+					  'err', 'plh', 'plh', 'plh', 'plh',
+					  'plh', 'err', 'err', 'err', 'plh',
+					  'err',    0,  'err', 'err', 'plh',
+					  'plh', 'plh',   '3']
 			DerivH[0] = textattribute(root.find('periodOfReport'))
 			DerivH[1] = textattribute(root.find('issuer/issuerCik'))
 			DerivH[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -562,7 +568,8 @@ def formtestandparse(xmlfilename):
 	tree = ET.parse(xmlfilename)
 	#Below pulls the root element of the parsed string
 	root = tree.getroot()
-	if textattribute(root.find('documentType')) == '4':
+	if textattribute(root.find('documentType')) == '4' or \
+	   textattribute(root.find('documentType')) == '4/A':
 		results = xn4parse(xmlfilename)
 	
 	if textattribute(root.find('documentType')) == '5':

@@ -110,7 +110,9 @@ if form == "":
 	form = 4 
 print "We'll work with form", form
 
-
+formdir = form
+if form == '4/A':
+	formdir = '4A'
 
 CIKs = []
 # This only runs if there is no CIKs.txt file; if none exists,
@@ -129,7 +131,7 @@ print " "
 
 # Makes the storage directories if they are missing/not yet created
 for CIK in CIKs:
-	directory = "storage/" + str(CIK) + '/' + str(form)
+	directory = "storage/" + str(CIK) + '/' + str(formdir)
 	if not(os.path.exists(directory)):
 		os.makedirs(directory)
 		print "Created a directory: ", directory
@@ -169,10 +171,10 @@ indexbasepath = "/edgar/full-index"
 
 if indexupdate == 'y':
 	mostrecentindex = max(indexfilelist)
-	print mostrecentindex
+	
 	templength = len(mostrecentindex)
 	mostrecentindex = mostrecentindex[templength - 10: templength]
-	print mostrecentindex
+	
 	latestyear = mostrecentindex[:4]
 	latestquarter = 'QTR' + mostrecentindex[5]
 	try:
@@ -275,14 +277,14 @@ print "Now lets generate the list of forms we need from the indices we have."
 
 for CIK in CIKs:
 	print "\t Working on:", CIK
-	target = open(cwd + '/' + "storage/" + str(CIK) + '/' + str(CIK) + 'form' + str(form) + '.txt', 'w')	
+	target = open(cwd + '/' + "storage/" + str(CIK) + '/' + str(CIK) + 'form' + str(formdir) + '.txt', 'w')	
 #	formfilelist = []
 	
 	i = 0
 	for index in indexfilelist:
 		with open(index) as infile:
 			for line in infile:
-				if line.find(str(form)+'  ') == 0 and line.find(' ' + str(CIK) + ' ') != -1:
+				if line.find(' ' + str(CIK) + ' ') != -1 and line.find(str(form)+'  ') == 0:
 					formfilename = line[line.find("edgar/data/"):len(line)]
 					formfilename = formfilename.rstrip()
 					
@@ -313,7 +315,7 @@ for CIK in CIKs:
 
 	
 
-	existingfilestring = os.listdir(cwd + '/' + "storage/" + str(CIK) + '/' + str(form) + '/')
+	existingfilestring = os.listdir(cwd + '/' + "storage/" + str(CIK) + '/' + str(formdir) + '/')
 	
 	tempfilestring = []
 
@@ -328,7 +330,7 @@ for CIK in CIKs:
 	#print ftpbasedirectory
 	#ftp.cwd(ftpbasedirectory)
 
-	with open(cwd + '/' + "storage/" + str(CIK) + '/' + str(CIK) + 'form' + str(form) + '.txt') as sourcefile:
+	with open(cwd + '/' + "storage/" + str(CIK) + '/' + str(CIK) + 'form' + str(formdir) + '.txt') as sourcefile:
 		print "CIK loop", CIK
 		
 		for line in sourcefile:
@@ -346,7 +348,7 @@ for CIK in CIKs:
 					filepath = line.strip()
 					endline = filepath.find('.txt')
 					filename = filepath[namestart + 1:endline+1]
-					local_filename = os.getcwd() + "/" + "storage/" + str(CIK) + '/' + str(form)+ '/' + filerCIK + '-' + filename + "txt"
+					local_filename = os.getcwd() + "/" + "storage/" + str(CIK) + '/' + str(formdir) + '/' + filerCIK + '-' + filename + "txt"
 					target = open(local_filename, 'wb')
 					
 					ftp.retrbinary('RETR ' + filepath, target.write)
@@ -381,7 +383,7 @@ print "done"
 
 ftp.close()
 print "FTP connection closed"
-txttoxml.processxml(cwd, form, CIKs)
+txttoxml.processxml(cwd, formdir, CIKs)
 print "Saved files converted from .txt to .xml"
 
 

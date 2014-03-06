@@ -1,0 +1,53 @@
+Derivative Transaction List Key:
+	[0] = Period Of Report
+	[1] = Issuer CIK
+	[2] = Reporting Owner CIK
+	[3] = Reporting Owner Name
+	[4] = Is the Reporting Owner a Director?
+	[5] = Is the Reporting Owner an Officer?
+	[6] = Is the Reporting Owner a Ten Percent Owner?
+	[7] = Is the Reporting Owner Something Else?
+	[8] = Reporting Owner Officer Title
+	[9] = Security Title
+	[10] = Conversion Price
+	[11] = Transaction Date
+	[12] = Transaction Code
+	[13] = Shares in Transaction
+	[14] = Transaction Price Per Share
+	[15] = Transaction Acquired/Disposed Code
+	[16] = Expiration Date
+	[17] = Underlying Security Title
+	[18] = Underlying Security Shares
+	[19] = Shares Owned Following Transaction
+	[20] = Direct Or Indirect Ownership
+	[21] = 1 if a "10b5-1" footnote is present
+	[22] = Derivative Transaction Number (on that Form 4)
+	[23] = Source File Name/Partial Path
+	[24] = (form 5 only) Not Subject To Section 16
+	[25] = (form 5 only) Form 3 Holdings Reported
+	[26] = (form 5 only) Form 4 Transactions Reported
+	[27] = Form Type
+
+	
+['2005-07-27', '0000882095', '0001319872', 'Cogan John Francis', '1', '0', '0', '0', None, 'Phantom Shares', '45.43', '2005-07-27', 'A', 1223.02, 0.0, 'A', 'N/A', 'Common Stock', 1223.02, 1223.02, 'D', 0, 1, '/AutomatedFTP/storage/882095/4A/882095-0001179110-05-016104.xml', 'plh', 'plh', 'plh', '4']
+['2005-07-27', '0000882095', '0001319872', 'Cogan John Francis', '1', '0', '0', '0', None, 'Non-Qualified Stock Option (right to buy)', '43.97', '2005-07-27', 'A', 6000.0, 0.0, 'A', '2015-07-27', 'Common Stock', 6000.0, 6000.0, 'D', 0, 2, '/AutomatedFTP/storage/882095/4A/882095-0001179110-05-016104.xml', 'plh', 'plh', 'plh', '4']
+['2006-12-20', '0000882095', '0001258445', 'TOOLE JOHN J', '0', '1', '0', '0', 'SVP, Clinical Research', 'Incentive Stock Option (right to buy)', '7.3985', '2006-12-20', 'M', 4000.0, 0.0, 'D', '2011-01-17', 'Common Stock', 4000.0, 0.0, 'D', 0, 1, '/AutomatedFTP/storage/882095/4A/882095-0001179110-07-002675.xml', 'plh', 'plh', 'plh', '4']
+['2007-05-08', '0000882095', '0001194913', 'HILLS CARLA A', '1', '0', '0', '0', None, 'Phantom shares', '82.82', '2007-05-08', 'A', 17.86, 0.0, 'A', 'N/A', 'Common Stock', 17.86, 17.86, 'D', 0, 1, '/AutomatedFTP/storage/882095/4A/882095-0001179110-07-013658.xml', 'plh', 'plh', 'plh', '4']
+['2008-07-01', '0000882095', '0001314870', 'Metza Kristen', '0', '1', '0', '0', 'SVP, Human Resources', 'Non-qualified Stock Option', '30.945', '2008-07-01', 'M', 6500.0, 0.0, 'D', '2016-07-26', 'Common Stock', 6500.0, 26000.0, 'D', 0, 1, '/AutomatedFTP/storage/882095/4A/882095-0001179110-08-013632.xml', 'plh', 'plh', 'plh', '4']
+['2008-07-01', '0000882095', '0001314870', 'Metza Kristen', '0', '1', '0', '0', 'SVP, Human Resources', 'Non-qualified Stock Option', '32.79', '2008-07-01', 'M', 1000.0, 0.0, 'D', '2017-01-22', 'Common Stock', 1000.0, 39000.0, 'D', 0, 2, '/AutomatedFTP/storage/882095/4A/882095-0001179110-08-013632.xml', 'plh', 'plh', 'plh', '4']
+['2008-07-22', '0000882095', '0001020055', 'DENNY JAMES M', '1', '0', '0', '0', None, 'Non-Qualified Stock Option (right to buy)', '8.2150', '2008-07-22', 'M', 24800.0, 0.0, 'D', '2012-01-02', 'Common Stock', 24800.0, 107200.0, 'D', 0, 1, '/AutomatedFTP/storage/882095/4A/882095-0001179110-08-014093.xml', 'plh', 'plh', 'plh', '4']
+['2011-02-04', '0000051143', '0001400395', 'Adkins Rodney C', '0', '1', '0', '0', 'Senior Vice President', 'Phantom Stock Unit', '0', '2011-02-04', 'I', 4098.0, 164.0, 'D', 'N/A', 'Common Stock', 4098.0, 1704.0, 'D', 0, 1, '/AutomatedFTP/storage/51143/4A/51143-0001181431-11-012302.xml', 'plh', 'plh', 'plh', '4']
+['2011-02-04', '0000051143', '0001400395', 'Adkins Rodney C', '0', '1', '0', '0', 'Senior Vice President', 'Phantom Stock Unit', '0', '2011-02-08', 'A', 7.0, 0.0, 'A', 'N/A', 'Common Stock', 7.0, 1711.0, 'D', 0, 2, '/AutomatedFTP/storage/51143/4A/51143-0001181431-11-012302.xml', 'plh', 'plh', 'plh', '4']
+['2010-09-30', '0001467858', '0001510623', 'EWANICK JOEL', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0', '2010-09-30', 'A', 1737.0, 0.0, 'A', 'N/A', 'Common Stock', 1737.0, 1737.0, 'D', 0, 1, '/AutomatedFTP/storage/1467858/4A/1467858-0001127602-11-005813.xml', 'plh', 'plh', 'plh', '4']
+['2010-09-30', '0001467858', '0001510623', 'EWANICK JOEL', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0', '2010-12-31', 'A', 2550.0, 0.0, 'A', 'N/A', 'Common Stock', 2550.0, 2550.0, 'D', 0, 2, '/AutomatedFTP/storage/1467858/4A/1467858-0001127602-11-005813.xml', 'plh', 'plh', 'plh', '4']
+['2010-12-31', '0001467858', '0001492154', 'Barra Mary T', '0', '1', '0', '0', 'Senior Vice President', 'Restricted Stock Units', '0.0', '2010-12-31', 'D', 19473.0, 0.0, 'D', 'N/A', 'Common Stock', 19473.0, 0.0, 'D', 0, 1, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000065.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001569823', 'Neumann Karl-Thomas', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', 'Not in form', '2013-03-31', 'A', 7894.0, 0.0, 'A', 'N/A', 'Common Stock', 7894.0, 7894.0, 'D', 0, 1, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000068.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001569823', 'Neumann Karl-Thomas', '0', '1', '0', '0', 'Vice President', 'Restricted Stock Units', 'Not in form', '2013-04-01', 'A', 53822.0, 0.0, 'A', 'N/A', 'Common Stock', 53822.0, 53822.0, 'D', 0, 2, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000068.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001495757', 'Ardila Jaime', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 3258.0, 'Not in form', 'D', 'N/A', 'Common Stock', 3258.0, 6513.0, 'D', 0, 1, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000081.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001495757', 'Ardila Jaime', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 2131.0, 'Not in form', 'D', 'N/A', 'Common Stock', 2131.0, 2131.0, 'D', 0, 2, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000081.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001495757', 'Ardila Jaime', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 2799.0, 'Not in form', 'D', 'N/A', 'Common Stock', 2799.0, 0.0, 'D', 0, 3, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000081.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001495757', 'Ardila Jaime', '0', '1', '0', '0', 'Vice President', 'Salary Stock Units', '0.0', '2013-03-31', 'A', 8522.0, 0.0, 'A', 'N/A', 'Common Stock', 8522.0, 8522.0, 'D', 0, 4, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000081.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001492157', 'Millikin Michael P', '0', '1', '0', '0', 'Senior Vice President & GC', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 8322.0, 'Not in form', 'D', 'N/A', 'Common Stock', 8322.0, 16644.0, 'D', 0, 1, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000085.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001492157', 'Millikin Michael P', '0', '1', '0', '0', 'Senior Vice President & GC', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 5475.0, 'Not in form', 'D', 'N/A', 'Common Stock', 5475.0, 5475.0, 'D', 0, 2, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000085.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001492157', 'Millikin Michael P', '0', '1', '0', '0', 'Senior Vice President & GC', 'Salary Stock Units', '0.0', '2013-03-31', 'M', 4431.0, 'Not in form', 'D', 'N/A', 'Common Stock', 4431.0, 0.0, 'D', 0, 3, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000085.xml', 'plh', 'plh', 'plh', '4']
+['2013-03-31', '0001467858', '0001492157', 'Millikin Michael P', '0', '1', '0', '0', 'Senior Vice President & GC', 'Salary Stock Units', '0.0', '2013-03-31', 'A', 21798.0, 0.0, 'A', 'N/A', 'Common Stock', 21798.0, 21798.0, 'D', 0, 4, '/AutomatedFTP/storage/1467858/4A/1467858-0001467858-13-000085.xml', 'plh', 'plh', 'plh', '4']

@@ -2,6 +2,9 @@ def filemapper(CIK, form):
 	import os
 	xmldirectory = []
 	cwd = os.getcwd()
+	
+	if form == '4/A':
+		form = '4A'
 
 	for root, dirs, files in os.walk (cwd + "/AutomatedFTP/storage/" + str(CIK) + "/" + str(form) + "/"):
 		for file in files:

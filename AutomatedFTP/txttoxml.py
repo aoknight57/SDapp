@@ -10,9 +10,9 @@ import os
 #			CIKs.append(line.strip())
 #	print "Using CIKs:", CIKs
 
-def processxml(cwd, form, CIKs):
+def processxml(cwd, formdir, CIKs):
 	for CIK in CIKs:
-		directory = cwd + '/' + "storage/" + str(CIK) + '/' + str(form) + '/'
+		directory = cwd + '/' + "storage/" + str(CIK) + '/' + str(formdir) + '/'
 		for filename in os.listdir(directory):
 			if filename.endswith(".txt"):
 				
