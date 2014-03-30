@@ -104,7 +104,7 @@ if form == '4' or form == '4/A' or form == '5':
 	if form == '4/A':
 		target = open("NonDerivXn4AFile.txt", 'w')
 	if form == '5':
-		target = open("NonDerivXn4File.txt", 'w')
+		target = open("NonDerivXn5File.txt", 'w')
 
 	target.truncate()
 	print>>target, """NonDerivative Transaction List Key:
@@ -118,20 +118,24 @@ if form == '4' or form == '4/A' or form == '5':
 	[7] = Is the Reporting Owner Something Else?
 	[8] = Reporting Owner Officer Title
 	[9] = Security Title
-	[10] = Transaction Date
-	[11] = Transaction Code
-	[12] = Shares in Transaction
-	[13] = Transaction Price Per Share
-	[14] = Transaction Acquired/Disposed Code
-	[15] = Shares Owned Following Transaction
-	[16] = Direct Or Indirect Ownership
-	[17] = 1 if a "10b5-1" footnote is present
-	[18] = Nonderivative Transaction Number (on that Form 4)
-	[19] = Source File Name/Partial Path
-	[20] = (form 5 only) Not Subject To Section 16
-	[21] = (form 5 only) Form 3 Holdings Reported
-	[22] = (form 5 only) Form 4 Transactions Reported
-	[23] = Form Type
+	[10] = Placeholder Cell
+	[11] = Transaction Date
+	[12] = Transaction Code
+	[13] = Shares in Transaction
+	[14] = Transaction Price Per Share
+	[15] = Transaction Acquired/Disposed Code
+	[16] = Placeholder Cell
+	[17] = Placeholder Cell
+	[18] = Placeholder Cell
+	[19] = Shares Owned Following Transaction
+	[20] = Direct Or Indirect Ownership
+	[21] = 1 if a "10b5-1" footnote is present
+	[22] = Nonderivative Transaction Number (on that Form 4)
+	[23] = Source File Name/Partial Path
+	[24] = (form 5 only) Not Subject To Section 16
+	[25] = (form 5 only) Form 3 Holdings Reported
+	[26] = (form 5 only) Form 4 Transactions Reported
+	[27] = Form Type
 
 	"""
 	for entry in ndxnlist:
@@ -145,7 +149,7 @@ if form == '4' or form == '4/A' or form == '5':
 	if form == '4/A':
 		target = open("DerivXn4AFile.txt", 'w')
 	if form == '5':
-		target = open("DerivXn4File.txt", 'w')
+		target = open("DerivXn5File.txt", 'w')
 
 	target.truncate()
 	print>>target, """Derivative Transaction List Key:
@@ -207,15 +211,19 @@ if form == '3':
 	[12] = Placeholder Cell
 	[13] = Placeholder Cell
 	[14] = Placeholder Cell
-	[15] = Shares Owned Following Transaction
-	[16] = Direct Or Indirect Ownership
-	[17] = 1 if a "10b5-1" footnote is present
-	[18] = Nonderivative Transaction Number (on that Form 4)
-	[19] = Source File Name/Partial Path
-	[20] = (form 5 only) Not Subject To Section 16
-	[21] = (form 5 only) Form 3 Holdings Reported
-	[22] = (form 5 only) Form 4 Transactions Reported
-	[23] = Form Type
+	[15] = Placeholder Cell
+	[16] = Placeholder Cell
+	[17] = Placeholder Cell
+	[18] = Placeholder Cell
+	[19] = Shares Owned Following Transaction
+	[20] = Direct Or Indirect Ownership
+	[21] = 1 if a "10b5-1" footnote is present
+	[22] = Nonderivative Transaction Number (on that Form 4)
+	[23] = Source File Name/Partial Path
+	[24] = (form 5 only) Not Subject To Section 16
+	[25] = (form 5 only) Form 3 Holdings Reported
+	[26] = (form 5 only) Form 4 Transactions Reported
+	[27] = Form Type
 
 	"""
 	for entry in ndxnlist:

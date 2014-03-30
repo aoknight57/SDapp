@@ -26,5 +26,6 @@ Derivative Transaction List Key:
 	[24] = (form 5 only) Not Subject To Section 16
 	[25] = (form 5 only) Form 3 Holdings Reported
 	[26] = (form 5 only) Form 4 Transactions Reported
+	[27] = Form Type
 
 	

@@ -69,9 +69,10 @@ def xn4parse(xmlfilename):
 			#print "Found a grandchild"
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
 						  'err', 'err', 'err', 'err', 'err',
-						  'err', 'err', 'err', 'err', 'err',
-						  'err', 'err',    0,  'err', 'err',
-						  'plh', 'plh', 'plh',   '4']
+						  'plh', 'err', 'err', 'err', 'err', 
+						  'err', 'plh', 'plh', 'plh', 'err', 
+						  'err',    0,  'err', 'err', 'plh', 
+						  'plh', 'plh',   '4']
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -82,13 +83,17 @@ def xn4parse(xmlfilename):
 			NonDerivXn[7] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/isOther'))
 			NonDerivXn[8] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/officerTitle'))
 			NonDerivXn[9] = textattribute(child2.find('securityTitle/value'))
-			NonDerivXn[10] = textattribute(child2.find('transactionDate/value'))
-			NonDerivXn[11] = textattribute(child2.find('transactionCoding/transactionCode'))
-			NonDerivXn[12] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
-			NonDerivXn[13] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
-			NonDerivXn[14] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
-			NonDerivXn[15] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
-			NonDerivXn[16] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
+			#placeholder
+			NonDerivXn[11] = textattribute(child2.find('transactionDate/value'))
+			NonDerivXn[12] = textattribute(child2.find('transactionCoding/transactionCode'))
+			NonDerivXn[13] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
+			NonDerivXn[14] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
+			NonDerivXn[15] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
+			#placeholder
+			#placeholder
+			#placeholder
+			NonDerivXn[19] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
+			NonDerivXn[20] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
 
 			# For the type of filer (officer, director, etc.) sometimes a
 			# negative response is 0 and sometimes it is an omission. The below
@@ -112,10 +117,10 @@ def xn4parse(xmlfilename):
 			for fnotereturn in child2.iter('footnoteId'):
 				fnotenumber = fnotereturn.get('id')
 				for fnotenumber in footnotenames:
-					NonDerivXn[17] = 1
-			NonDerivXn[18] = NonDerivXnNumber
-			NonDerivXn[19] = xmlfilename[lencwd:]
-
+					NonDerivXn[21] = 1
+			NonDerivXn[22] = NonDerivXnNumber
+			NonDerivXn[23] = xmlfilename[lencwd:]
+			NonDerivXn[27] = textattribute(root.find('documentType'))
 			NonDerivXnNumber += 1
 			#print NonDerivXn
 			NonDerivXns.append(NonDerivXn)
@@ -194,7 +199,7 @@ def xn4parse(xmlfilename):
 					DerivXn[21] = 1
 			DerivXn[22] = DerivXnNumber
 			DerivXn[23] = xmlfilename[lencwd:]
-
+			DerivXn[27] = textattribute(root.find('documentType'))
 			DerivXnNumber += 1
 			#print DerivXn
 			DerivXns.append(DerivXn)
@@ -231,9 +236,10 @@ def xn5parse(xmlfilename):
 			#print "Found a grandchild"
 			NonDerivXn = ['err', 'err', 'err', 'err', 'err',
 						  'err', 'err', 'err', 'err', 'err',
-						  'err', 'err', 'err', 'err', 'err',
-						  'err', 'err',    0,  'err', 'err', 
-						  'err', 'err', 'err',   '5']
+						  'plh', 'err', 'err', 'err', 'err', 
+						  'err', 'plh', 'plh', 'plh', 'err', 
+						  'err',    0,  'err', 'err', 'err', 
+						  'err', 'err',   '5']
 			NonDerivXn[0] = textattribute(root.find('periodOfReport'))
 			NonDerivXn[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivXn[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -244,13 +250,17 @@ def xn5parse(xmlfilename):
 			NonDerivXn[7] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/isOther'))
 			NonDerivXn[8] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/officerTitle'))
 			NonDerivXn[9] = textattribute(child2.find('securityTitle/value'))
-			NonDerivXn[10] = textattribute(child2.find('transactionDate/value'))
-			NonDerivXn[11] = textattribute(child2.find('transactionCoding/transactionCode'))
-			NonDerivXn[12] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
-			NonDerivXn[13] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
-			NonDerivXn[14] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
-			NonDerivXn[15] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
-			NonDerivXn[16] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
+			#placeholder
+			NonDerivXn[11] = textattribute(child2.find('transactionDate/value'))
+			NonDerivXn[12] = textattribute(child2.find('transactionCoding/transactionCode'))
+			NonDerivXn[13] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
+			NonDerivXn[14] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
+			NonDerivXn[15] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
+			#placeholder
+			#placeholder
+			#placeholder
+			NonDerivXn[19] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
+			NonDerivXn[20] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
 
 			# For the type of filer (officer, director, etc.) sometimes a
 			# negative response is 0 and sometimes it is an omission. The below
@@ -274,13 +284,13 @@ def xn5parse(xmlfilename):
 			for fnotereturn in child2.iter('footnoteId'):
 				fnotenumber = fnotereturn.get('id')
 				for fnotenumber in footnotenames:
-					NonDerivXn[17] = 1
-			NonDerivXn[18] = NonDerivXnNumber
-			NonDerivXn[19] = xmlfilename[lencwd:]
+					NonDerivXn[21] = 1
+			NonDerivXn[22] = NonDerivXnNumber
+			NonDerivXn[23] = xmlfilename[lencwd:]
 			#These are solely related to Form 5
-			NonDerivXn[20] = textattribute(root.find('notSubjectToSection16'))
-			NonDerivXn[21] = textattribute(root.find('form3HoldingsReported'))
-			NonDerivXn[22] = textattribute(root.find('form4TransactionsReported'))
+			NonDerivXn[24] = textattribute(root.find('notSubjectToSection16'))
+			NonDerivXn[25] = textattribute(root.find('form3HoldingsReported'))
+			NonDerivXn[26] = textattribute(root.find('form4TransactionsReported'))
 			NonDerivXnNumber += 1
 			#print NonDerivXn
 			NonDerivXns.append(NonDerivXn)
@@ -421,8 +431,9 @@ def xn3parse(xmlfilename):
 			NonDerivH = ['err', 'err', 'err', 'err', 'err',
 						 'err', 'err', 'err', 'err', 'err',
 						 'plh', 'plh', 'plh', 'plh', 'plh',
-						 'err', 'err',    0,  'err', 'err',
-						 'plh', 'plh', 'plh',   '3']
+						 'plh', 'plh', 'plh', 'plh', 'err', 
+						 'err',    0,  'err', 'err', 'plh', 
+						 'plh', 'plh',   '3']
 			NonDerivH[0] = textattribute(root.find('periodOfReport'))
 			NonDerivH[1] = textattribute(root.find('issuer/issuerCik'))
 			NonDerivH[2] = textattribute(root.find('reportingOwner/reportingOwnerId/rptOwnerCik'))
@@ -433,13 +444,17 @@ def xn3parse(xmlfilename):
 			NonDerivH[7] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/isOther'))
 			NonDerivH[8] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/officerTitle'))
 			NonDerivH[9] = textattribute(child2.find('securityTitle/value'))
-			# NonDerivH[10] = textattribute(child2.find('transactionDate/value'))
-			# NonDerivH[11] = textattribute(child2.find('transactionCoding/transactionCode'))
-			# NonDerivH[12] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
-			# NonDerivH[13] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
-			# NonDerivH[14] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
-			NonDerivH[15] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
-			NonDerivH[16] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			NonDerivH[19] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
+			NonDerivH[20] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
 
 			# For the type of filer (officer, director, etc.) sometimes a
 			# negative response is 0 and sometimes it is an omission. The below
@@ -462,12 +477,12 @@ def xn3parse(xmlfilename):
 			for fnotereturn in child2.iter('footnoteId'):
 				fnotenumber = fnotereturn.get('id')
 				for fnotenumber in footnotenames:
-					NonDerivH[17] = 1
-			if NonDerivH[17] == 1:
-				NonDerivH[17] = 'Error, unexpected 10b5-1 entry'
+					NonDerivH[21] = 1
+			if NonDerivH[21] == 1:
+				NonDerivH[21] = 'Error, unexpected 10b5-1 entry'
 
-			NonDerivH[18] = NonDerivHNumber
-			NonDerivH[19] = xmlfilename[lencwd:]
+			NonDerivH[22] = NonDerivHNumber
+			NonDerivH[23] = xmlfilename[lencwd:]
 			NonDerivHNumber += 1
 			#print NonDerivH
 			NonDerivHs.append(NonDerivH)
@@ -498,15 +513,15 @@ def xn3parse(xmlfilename):
 			DerivH[8] = textattribute(root.find('reportingOwner/reportingOwnerRelationship/officerTitle'))
 			DerivH[9] = textattribute(child2.find('securityTitle/value'))
 			DerivH[10] = textattribute(child2.find('conversionOrExercisePrice/value'))
-			# DerivH[11] = textattribute(child2.find('transactionDate/value'))
-			# DerivH[12] = textattribute(child2.find('transactionCoding/transactionCode'))
-			# DerivH[13] = floattextattribute(child2.find('transactionAmounts/transactionShares/value'))
-			# DerivH[14] = floattextattribute(child2.find('transactionAmounts/transactionPricePerShare/value'))
-			# DerivH[15] = textattribute(child2.find('transactionAmounts/transactionAcquiredDisposedCode/value'))
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
+			# placeholder
 			DerivH[16] = textattribute(child2.find('expirationDate/value'))
 			DerivH[17] = textattribute(child2.find('underlyingSecurity/underlyingSecurityTitle/value'))
 			DerivH[18] = floattextattribute(child2.find('underlyingSecurity/underlyingSecurityShares/value'))
-			# DerivH[19] = floattextattribute(child2.find('postTransactionAmounts/sharesOwnedFollowingTransaction/value'))
+			# placeholder
 			DerivH[20] = textattribute(child2.find('ownershipNature/directOrIndirectOwnership/value'))
 
 			# For the type of filer (officer, director, etc.) sometimes a
@@ -571,6 +586,7 @@ def formtestandparse(xmlfilename):
 	if textattribute(root.find('documentType')) == '4' or \
 	   textattribute(root.find('documentType')) == '4/A':
 		results = xn4parse(xmlfilename)
+
 	
 	if textattribute(root.find('documentType')) == '5':
 		results = xn5parse(xmlfilename)
