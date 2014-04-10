@@ -1,7 +1,10 @@
 
-import xmltolist4
-import xmlmanager
+import json
 import os
+import xmlmanager
+import xmltolist4
+
+
 # This code will work best if the stored files are in a subdirectory of
 # the current working directory.  
 cwd = os.getcwd()
@@ -86,7 +89,7 @@ print "Here is the length of the non-derivative item list: ",
 print len(ndxnlist)
 print "Here is the length of the derivative item list: ",
 print len(dxnlist)
-print ndxnlist[1][2]
+# print ndxnlist[1][2]
 print "Length of error list indicating files with problems omitted from the parser:", len(parseerrorlist)
 print "Here are any files from above that were filed in 2005 or later:"
 oldyears = ['94', '95', '96', '97', '98', '99', '00', '01', '02', '03', '04']
@@ -101,13 +104,17 @@ if form == '4' or form == '4/A' or form == '5':
 	i = 0
 	if form == '4':
 		target = open("NonDerivXn4File.txt", 'w')
+		legend = open("NonDerivLegend4.txt", 'w')
 	if form == '4/A':
 		target = open("NonDerivXn4AFile.txt", 'w')
+		legend = open("NonDerivLegend4A.txt", 'w')
 	if form == '5':
 		target = open("NonDerivXn5File.txt", 'w')
+		legend = open("NonDerivLegend5.txt", 'w')
+	
 
 	target.truncate()
-	print>>target, """NonDerivative Transaction List Key:
+	print>>legend, """NonDerivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK
 	[2] = Reporting Owner CIK
@@ -138,21 +145,23 @@ if form == '4' or form == '4/A' or form == '5':
 	[27] = Form Type
 
 	"""
-	for entry in ndxnlist:
-		i += 1
-		print>>target, entry
-	print i
+	legend.close()
+	json.dump(ndxnlist, target)
+	print len(ndxnlist)
 	target.close()
 
 	if form == '4':
 		target = open("DerivXn4File.txt", 'w')
+		legend = open("DerivLegend4.txt", 'w')
 	if form == '4/A':
 		target = open("DerivXn4AFile.txt", 'w')
+		legend = open("DerivLegend4A.txt", 'w')
 	if form == '5':
 		target = open("DerivXn5File.txt", 'w')
-
+		legend = open("DerivLegend5.txt", 'w')
+	
 	target.truncate()
-	print>>target, """Derivative Transaction List Key:
+	print>>legend, """Derivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK
 	[2] = Reporting Owner CIK
@@ -183,19 +192,20 @@ if form == '4' or form == '4/A' or form == '5':
 	[27] = Form Type
 
 	"""
-	for entry in dxnlist:
-		i += 1
-		print>>target, entry
-	print i
+	legend.close()
+	
+	json.dump(dxnlist, target)
+	print len(dxnlist)
 	#print j
 	target.close()
 
 
 if form == '3':
 	i = 0
-	target = open("NonDerivH3File.txt", 'w')
+	target = open("NonDeriv3File.txt", 'w')
 	target.truncate()
-	print>>target, """NonDerivative Transaction List Key:
+	legend = open("NonDerivLegend3.txt", 'w')
+	print>>legend, """NonDerivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK
 	[2] = Reporting Owner CIK
@@ -226,15 +236,15 @@ if form == '3':
 	[27] = Form Type
 
 	"""
-	for entry in ndxnlist:
-		i += 1
-		print>>target, entry
-	print i
+	legend.close()
+	json.dump(ndxnlist, target)
+	print len(ndxnlist)
 	target.close()
 
 	target = open("DerivH3File.txt", 'w')
 	target.truncate()
-	print>>target, """Derivative Transaction List Key:
+	legend = open("DerivLegend3.txt", 'w')
+	print>>legend, """Derivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK
 	[2] = Reporting Owner CIK
@@ -265,10 +275,9 @@ if form == '3':
 	[27] = Form Type
 
 	"""
-	for entry in dxnlist:
-		i += 1
-		print>>target, entry
-	print i
+	legend.close()
+	json.dump(dxnlist, target)
+	print len(dxnlist)
 	#print j
 	target.close()
 
