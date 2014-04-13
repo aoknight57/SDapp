@@ -241,7 +241,7 @@ if form == '3':
 	print len(ndxnlist)
 	target.close()
 
-	target = open("DerivH3File.txt", 'w')
+	target = open("Deriv3File.txt", 'w')
 	target.truncate()
 	legend = open("DerivLegend3.txt", 'w')
 	print>>legend, """Derivative Transaction List Key:
