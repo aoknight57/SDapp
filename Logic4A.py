@@ -2,7 +2,7 @@ import json
 
 
 # Form 4 direct ownership, this could be replaced by a tailored call for only
-# direct ownership entries from the DB
+# direct ownership entries from the DB  
 
 def xnreader(filename):
 	target = open(filename)
