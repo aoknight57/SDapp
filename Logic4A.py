@@ -7,7 +7,20 @@ import json
 def xnreader(filename):
 	target = open(filename)
 	content = json.load(target)
-	return  content
+	convcontent = []
+	for row in content:
+		convrow = []
+		for item in row:
+			convitem = item
+
+			if isinstance(convitem, unicode):
+				convitem = convitem.encode('ASCII', 'ignore')
+			convrow.append(convitem)
+
+		convcontent.append(convrow)
+	
+
+	return convcontent
 
 def keyattribs(entry):
 	attribs = []
@@ -56,7 +69,7 @@ def threadconverter(listbyform):
 		thread = []
 		lastremaining = -1000000
 		for entry in form:
-			# print "Look here"
+
 			if entry[1] != 'AttributeError' and entry[0] != 'AttributeError':
 				if entry[1]-entry[0] == lastremaining:
 					thread.append(entry)
@@ -74,41 +87,13 @@ def threadconverter(listbyform):
 
 form4Xns = xnreader('NonDerivXn4File.txt')
 form4AXns = xnreader('NonDerivXn4AFile.txt')
-
 Form4s = ConvertListByForm(form4Xns)
 Form4As = ConvertListByForm(form4AXns)
-
-
-
-#print 'Form4s', Form4s
-#print 'Form4As', Form4As
-
-
-
 Form4Threads = threadconverter(Form4s)
-
-# for form in Form4Threads:
-# 	for thread in form:
-# 		for entry in thread:
-# 			print entry
-print ""
-print ""
 Form4AThreads = threadconverter(Form4As)
-
-# for form in Form4As:
-# 	for entry in form:
-# 		print entry
-
-
-# for form in Form4AThreads:
-# 	for thread in form:
-# 		for entry in thread:
-# 			print entry
-# for entry in Form4As:
-
-
 Form4AIndices = []
 Form4AResults = []
+
 for form in Form4As:
 	Form4AIndices.append(form[0][4] + '-' + form[0][5] + '-' + form[0][6])
 	Form4AResults.append("")
@@ -117,96 +102,93 @@ for form in Form4s:
 	Form4Indices.append(form[0][4] + '-' + form[0][5] + '-' + form[0][6])
 
 Form4ADict = dict(zip(Form4AIndices, Form4As))
-# print Form4ADict
-
 Form4Dict = dict(zip(Form4Indices, Form4s))
-# print Form4Dict
-
 Form4AResultsDict = dict(zip(Form4AIndices, Form4AResults))
 Form4AThreadMatches = dict(zip(Form4AIndices, []))
 Form4ThreadsDict = dict(zip(Form4Indices, Form4Threads))
 Form4AThreadsDict = dict(zip(Form4AIndices, Form4AThreads))
-# print Form4AResultsDict
+
 
 for key in Form4AIndices:
+	threadmatches = []
 	Threads4A = Form4AThreadsDict[key]
 	try: 
 		Transactions4 = Form4Dict[key]
 	except:	
 		Transactions4 = "Form 4A Key Error"
+		threadmatches.append(Transactions4)
 	balances4 = []
 	for xn in Transactions4:
 		try:
 			balances4.append(xn[1] - xn[0])
 		except:
 			balances4.append('Error')
-	threadmatches = []
+	
 	for thread4A in Threads4A:
 		threadmatch = [i for i, x in enumerate(balances4) if x == thread4A[0][1] - thread4A[0][0]]
 		if threadmatch == []:
 			threadmatch = 'None'
 		threadmatches.append(threadmatch)
-
-
 	Form4AThreadMatches[key] = threadmatches
-# print "Form4AThreadMatches", Form4AThreadMatches
-# print len(Form4AThreadMatches)
-# print len(Form4AThreads)
-# print len(Form4As)
-
-# print Form4AThreads
 
 Form4AXnMatches = []
 for formkey in Form4AThreadMatches:
 	LastMatch = -1
-	print "Form4AThreadMatches[formkey]", formkey, Form4AThreadMatches[formkey]
-	# for ThreadMatch in Form4AThreadMatches[formkey]:
-		# print 'ThreadMatch[0]', ThreadMatch[0]
-		# print 'Form4AThreadsDict[formkey]', Form4AThreadsDict[formkey]
 	for thread in Form4AThreadsDict[formkey]:
-		print 'thread', thread
-		print 'Form4AThreadMatches[formkey]', Form4AThreadMatches[formkey]
-		
 		ThreadMatch = Form4AThreadMatches[formkey][Form4AThreadsDict[formkey].index(thread)]
-		print "threadmatch", ThreadMatch
+		
 		xncounter = 0
-		# print "thread", thread
 		for transaction in thread:
-			# print thread
-			# print 'transaction', transaction
-			# print 'ThreadMatch', ThreadMatch
 			try:
 				XnMatchInfo = []
 				XnMatchInfo.append(formkey)
+				
+				# This adds the 4/A transaction number
 				XnMatchInfo.append(transaction[3])
 				if xncounter + int(ThreadMatch[0]) <= LastMatch:
 				 	XnMatchInfo.append('earlier 4/A xn match supersedes')
-
 				if xncounter + int(ThreadMatch[0]) > LastMatch:
-					XnMatchInfo.append(xncounter + int(ThreadMatch[0]))
+					XnMatchInfo.append(xncounter + int(ThreadMatch[0])+1)
+					# [This adds the Form 4 Transaction it FOLLOWS (not the actual match)]
 					LastMatch = xncounter + int(ThreadMatch[0])
+
 				xncounter += 1
 				Form4AXnMatches.append(XnMatchInfo)
 			except:
 				Form4AXnMatches.append(str(transaction) + 'ThreadMatch Indices: ' + str(ThreadMatch) + "; Form 4A Logic Matching Error, either no valid thread match or the valid thread match was used by an earlier transaction")
 
-
-for transactionmatch in Form4AXnMatches:
-	print transactionmatch
-print len(Form4AXnMatches)
-
 target = open("Form4AMatchIndex.txt", 'w')
 json.dump(Form4AXnMatches, target)
 target.close()
 
-# threadmatches = []
-# for form in Form4AThreads:
-# 	threadinsertions = []
-# 	threadterminations = []
-# 	for thread in form:
-# 		if 
 
-# 		if thread[0][1] - thread[0][1] == 
+
+# For index, the transaction # for 4/A is first and the 4 is second
+
+
+# this makes a form 4 file with original transsaction matchin the form 4/A filename
+Form4XnMatched = []
+for match in Form4AXnMatches:
+	if len(match[0]) == 32:
+		Form4 = Form4Dict[match[0]]
+		Form4A = Form4ADict[match[0]]
+		appendxn = [match[0]]
+		for transaction in Form4:
+			if match[2] == transaction[3]:
+				appendxn = appendxn + transaction
+		for transaction in Form4A:
+			if match[1] == transaction[3]:
+				if len(appendxn) < 2:
+					appendxn = [match[0],'','','','','','','']
+				appendxn = appendxn + transaction
+
+		Form4XnMatched.append(appendxn)
+
+target = open("Form4MatchForms.txt", 'w')
+json.dump(Form4XnMatched, target)
+target.close()
+
+print "Done, look for new .txt files in this script's folder"
 
 # Form 4 shares remaining [start, after 1, after 2, ...]
 
