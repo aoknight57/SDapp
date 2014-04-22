@@ -9,8 +9,8 @@ Stock Model
 
 Management
 	Name
-	Title
-	Officer/Director/10% Owner/Other [Perhaps you intend to roll this into the "Title" category; if so, ignore this suggestion. Alternatively, we could set up different classes for Directors, 10% owners, but it seems like it would be simpler to keep all in one class, since all of these items apply]
+	Title: CEO/CFO/Other
+	Class: Officer/Director/10% Owner/Other
 	CIK
 	Start Date
 	Current Holdings
@@ -20,9 +20,9 @@ Stock Price
 	Date
 	Price
 
-Transactions/Holdings [Terminology note: remember that Form 3 reports on holdings (rather than transactions) is something we are pulling in under this same format.  All the information in Form 3 is captured under the same category scheme, but with irrelevant items omitted.  I will push a file into the respository that lays this out: "DerivLegend3.txt"]
-	Date [I kind of buried it, but transaction date is [11] below; do you mean something else?  It just occurred to me that the date the form was filed is not readily available in the .xml version of the form 4; It is in the text version though, so think I can solve this problem by tweaking the .txt-->.xml conversion to insert the date into the .xml file.  I'm not sure how we would use this for analysis, but it would be necessary if we want to tell a user when a form 4 was filed.]
-	Options or Not? [I want to make sure I understand what you mean by this; I don't want to sound like I am making a semantic distinction, the name is good.  With this category, are you intending to capture the distinction between the derivative and nonderivative parses? If so, I agree with making this a category. I just ask because the derivative section of the form also encompasses some convertible securities which have options but aren't options -- like Google's Class B common (the supervoting shares which are convertible into the Class A). This was something that surprised me when I first dug into these filings]
+Transactions/Holdings
+	Date of filing
+	Type: Derivative or NonDerivative
 	[0] = Period Of Report
 	[1] = Issuer CIK
 	[2] = Reporting Owner CIK
