@@ -103,14 +103,14 @@ print "Let's save these entries"
 if form == '4' or form == '4/A' or form == '5':
 	i = 0
 	if form == '4':
-		target = open("NonDerivXn4File.txt", 'w')
-		legend = open("NonDerivLegend4.txt", 'w')
+		target = open("parseresults/NonDerivXn4File.txt", 'w')
+		legend = open("parseresults/NonDerivLegend4.txt", 'w')
 	if form == '4/A':
-		target = open("NonDerivXn4AFile.txt", 'w')
-		legend = open("NonDerivLegend4A.txt", 'w')
+		target = open("parseresults/NonDerivXn4AFile.txt", 'w')
+		legend = open("parseresults/NonDerivLegend4A.txt", 'w')
 	if form == '5':
-		target = open("NonDerivXn5File.txt", 'w')
-		legend = open("NonDerivLegend5.txt", 'w')
+		target = open("parseresults/NonDerivXn5File.txt", 'w')
+		legend = open("parseresults/NonDerivLegend5.txt", 'w')
 	
 
 	target.truncate()
@@ -151,14 +151,14 @@ if form == '4' or form == '4/A' or form == '5':
 	target.close()
 
 	if form == '4':
-		target = open("DerivXn4File.txt", 'w')
-		legend = open("DerivLegend4.txt", 'w')
+		target = open("parseresults/DerivXn4File.txt", 'w')
+		legend = open("parseresults/DerivLegend4.txt", 'w')
 	if form == '4/A':
-		target = open("DerivXn4AFile.txt", 'w')
-		legend = open("DerivLegend4A.txt", 'w')
+		target = open("parseresults/DerivXn4AFile.txt", 'w')
+		legend = open("parseresults/DerivLegend4A.txt", 'w')
 	if form == '5':
-		target = open("DerivXn5File.txt", 'w')
-		legend = open("DerivLegend5.txt", 'w')
+		target = open("parseresults/DerivXn5File.txt", 'w')
+		legend = open("parseresults/DerivLegend5.txt", 'w')
 	
 	target.truncate()
 	print>>legend, """Derivative Transaction List Key:
@@ -202,9 +202,9 @@ if form == '4' or form == '4/A' or form == '5':
 
 if form == '3':
 	i = 0
-	target = open("NonDeriv3File.txt", 'w')
+	target = open("parseresults/NonDeriv3File.txt", 'w')
 	target.truncate()
-	legend = open("NonDerivLegend3.txt", 'w')
+	legend = open("parseresults/NonDerivLegend3.txt", 'w')
 	print>>legend, """NonDerivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK
@@ -241,9 +241,9 @@ if form == '3':
 	print len(ndxnlist)
 	target.close()
 
-	target = open("Deriv3File.txt", 'w')
+	target = open("parseresults/Deriv3File.txt", 'w')
 	target.truncate()
-	legend = open("DerivLegend3.txt", 'w')
+	legend = open("parseresults/DerivLegend3.txt", 'w')
 	print>>legend, """Derivative Transaction List Key:
 	[0] = Period Of Report
 	[1] = Issuer CIK

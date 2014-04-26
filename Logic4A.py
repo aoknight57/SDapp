@@ -85,8 +85,8 @@ def threadconverter(listbyform):
 	return ThreadsList
 
 
-form4Xns = xnreader('NonDerivXn4File.txt')
-form4AXns = xnreader('NonDerivXn4AFile.txt')
+form4Xns = xnreader('parseresults/NonDerivXn4File.txt')
+form4AXns = xnreader('parseresults/NonDerivXn4AFile.txt')
 Form4s = ConvertListByForm(form4Xns)
 Form4As = ConvertListByForm(form4AXns)
 Form4Threads = threadconverter(Form4s)
@@ -157,7 +157,7 @@ for formkey in Form4AThreadMatches:
 			except:
 				Form4AXnMatches.append(str(transaction) + 'ThreadMatch Indices: ' + str(ThreadMatch) + "; Form 4A Logic Matching Error, either no valid thread match or the valid thread match was used by an earlier transaction")
 
-target = open("Form4AMatchIndex.txt", 'w')
+target = open("parseresults/Form4AMatchIndex.txt", 'w')
 json.dump(Form4AXnMatches, target)
 target.close()
 
@@ -184,11 +184,11 @@ for match in Form4AXnMatches:
 
 		Form4XnMatched.append(appendxn)
 
-target = open("Form4MatchForms.txt", 'w')
+target = open("parseresults/Form4MatchForms.txt", 'w')
 json.dump(Form4XnMatched, target)
 target.close()
 
-print "Done, look for new .txt files in this script's folder"
+print "Done, look for new .txt files in the parseresults subfolder"
 
 # Form 4 shares remaining [start, after 1, after 2, ...]
 
