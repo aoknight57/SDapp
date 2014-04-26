@@ -1,0 +1,17 @@
+Visualization ideas:
+Ellipse graph -- shows last five stock moves after this insider made a major trade (buy or sell).  
+
+Are there useful visualizations?
+One problem with a single good visualization is that under the necessary analytical tests, there is a lot going on and it is impossible to present a visualization showing 8 different tests/types of data in a simple way because that isn't simple.  Therefore, the visualization shown (if any) perhaps should be a function of what trigger gets hit.  
+
+Sentence visualization:
+
+Downward predictors.  
+- This level selling activity precedes negative three-month stock performance in 82% of cases.  
+- Three of the five officers are selling stock faster than they earn it.  
+- On March 20, 2014, insider selling made up 15% of the stock's total volume.  
+
+No relevant predictors.
+  Want the data anyway?
+  Want a chart?
+  What tests did we run?

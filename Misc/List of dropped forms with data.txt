@@ -1,0 +1,65 @@
+20 Form 4/A (Amendments) - we need to handle
+10 Form 5 - we can ignore this, I think because we can capture all transactions by Form 4 (Form 5 is only a year end summary)
+
+/Users/David/882095/04/000117911004002858/edgar.xml 
+	This is a form 5 and it was filed on edgar at http://www.sec.gov/Archives/edgar/data/882095/000117911004002858/0001179110-04-002858-index.htm
+	We don't really need these to show up since they are year end reports
+/Users/David/882095/04/000117911004007469/edgar.xml
+	This is a form 4/A (amendment) -- we need to think about the right way to handle this.  We will need to change the logic in either the python or sql to find the related original form 4 and replace it with the amended version. 	
+	This was filed 2004-04-05 at http://www.sec.gov/Archives/edgar/data/882095/000117911004007469/0001179110-04-007469-index.htm
+/Users/David/882095/04/000117911004022281/edgar.xml
+	Another form 4/A, on edgar at: http://www.sec.gov/Archives/edgar/data/882095/000117911004022281/0001179110-04-022281-index.htm
+/Users/David/882095/05/000117911005003427/edgar.xml
+	Form 5 at http://www.sec.gov/Archives/edgar/data/882095/000117911005003427/0001179110-05-003427-index.htm
+/Users/David/882095/05/000117911005016104/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911005016104/0001179110-05-016104-index.htm
+/Users/David/882095/07/000117911007002675/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911007002675/0001179110-07-002675-index.htm
+/Users/David/882095/07/000117911007013658/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911007013658/0001179110-07-013658-index.htm
+/Users/David/882095/08/000117911008003058/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911008003058/0001179110-08-003058-index.htm
+/Users/David/882095/08/000117911008013632/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911008013632/0001179110-08-013632-index.htm
+/Users/David/882095/08/000117911008014093/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911008014093/0001179110-08-014093-index.htm
+/Users/David/882095/08/000117911008018132/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911008018132/xslF345X03/edgar.xml
+/Users/David/882095/08/000117911008021489/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911008021489/0001179110-08-021489-index.htm
+/Users/David/882095/09/000117911009000846/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911009000846/0001179110-09-000846-index.htm
+/Users/David/882095/09/000117911009001092/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911009001092/0001179110-09-001092-index.htm
+/Users/David/882095/10/000117911010015903/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911010015903/0001179110-10-015903-index.htm
+/Users/David/882095/10/000117911010015905/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911010015905/0001179110-10-015905-index.htm
+/Users/David/882095/11/000117911011006030/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911011006030/0001179110-11-006030-index.htm
+/Users/David/882095/11/000117911011006078/edgar.xml
+	Form 4/A at http://www.sec.gov/Archives/edgar/data/882095/000117911011006078/0001179110-11-006078-index.htm
+/Users/David/882095/11/000117911011006079/edgar.xml
+	Form 4/A
+/Users/David/882095/11/000117911011006080/edgar.xml
+	Form 4/A
+/Users/David/882095/11/000117911011006158/edgar.xml
+	Form 4/A
+/Users/David/882095/11/000117911011006159/edgar.xml
+	Form 4/A
+/Users/David/882095/12/000117911012000958/edgar.xml
+	Form 5
+/Users/David/882095/13/000117911013000729/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001360/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001361/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001362/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001363/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001364/edgar.xml
+	Form 5
+/Users/David/882095/14/000117911014001365/edgar.xml
+	Form 5

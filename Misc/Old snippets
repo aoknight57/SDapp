@@ -1,0 +1,23 @@
+
+# This block rearranges the index filepaths to the form the SEC uses for .xml filing
+# It is different in a nontrivial way because the sec stores the .xml files in nested folders.  
+#				accstart = line.find('/', len("edgar/data/"))
+			# 	foldstart = line.find('-')
+			# 	identstart = line.find('-', foldstart + 1)
+			# 	identend = line.find('.')
+			# 	accession = line[accstart+1:foldstart]
+			# 	yearfolder = line[foldstart+1:identstart]
+			# 	identifier = line[identstart+1:identend]
+
+
+			# 	ftp.cwd(ftpbasedirectory + "/" + yearfolder + '/' + accession + yearfolder + identifier)
+			# 	cwddirectory = []
+			# 	ftp.retrlines('nlst', cwddirectory.append)
+			# 	for y in cwddirectory:
+			# 		if y.find('.xml') != -1:
+			# 			local_filename = os.getcwd() + "/" + "storage/" + str(CIK) + '/' + str(form)+ '/' + yearfolder + "-" + accession + identifier + ".xml"
+			# 			target = open(local_filename, 'wb')
+			# 			ftp.retrbinary('RETR %s' % str(y), target.write)
+			# 	target.close
+			# except: 
+			# 	print "Can't get file in ", ftpbasedirectory + "/" + yearfolder + '/' + accession + yearfolder + identifier

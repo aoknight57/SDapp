@@ -1,0 +1,46 @@
+4A issues list -- 
+
+
+1. Some forms where no non-deriv transactions were amended at all shows up as a match of the 1 index 
+https://www.sec.gov/Archives/edgar/data/882095/000117911003006620/xslF345X02/edgar.xml
+https://www.sec.gov/Archives/edgar/data/882095/000117911003008281/xslF345X02/edgar.xml
+
+2. 
+This form kind of bizarrely amends Mary Barra's holdings of GM over three years later. (This was before she was CEO, filed, April 2, 2013 - she became CEO of GM around 9 months later)
+https://www.sec.gov/Archives/edgar/data/1467858/000146785813000065/xslF345X03/wf-form4a_136493096905889.xml
+https://www.sec.gov/Archives/edgar/data/1467858/000112760211000483/xslF345X03/form4.xml
+
+The matcher does actually seem to handle this one correctly
+
+3. 
+These jerks over at GM filled out this Form 4 (and its amendment) out of order.  This adds a whole new level of obnoxiousness -- https://www.sec.gov/Archives/edgar/data/1467858/000146785814000024/xslF345X03/wf-form4_138878129627148.xml
+https://www.sec.gov/Archives/edgar/data/1467858/000146785814000076/xslF345X03/wf-form4a_139396749113346.xml
+
+
+4. [Some] companies don't amend the shares remaining number.  This means the transaction must be analyzed thread by thread from earliest to last (problem for dictionaries) with the shares remaining recalc'ed for the form 
+
+(https://www.sec.gov/Archives/edgar/data/66740/000112760210020059/xslF345X03/form4.xml
+https://www.sec.gov/Archives/edgar/data/66740/000112760210020695/xslF345X03/form4a.xml)
+
+
+5. It looks like some companies don't update interim form 4 share remaining balances when the 4/A is filed after a few form 4s elapsed.  
+
+https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001304501&type=&dateb=&owner=only&start=0&count=40
+https://www.sec.gov/Archives/edgar/data/66740/000112760211007149/xslF345X03/form4a.xml
+https://www.sec.gov/Archives/edgar/data/66740/000112760211004595/xslF345X03/form4.xml
+
+
+
+6. Excessive decimals in one case ruins easy match.  Need to round these to the nearest decimal.  
+https://www.sec.gov/Archives/edgar/data/66740/000112760213006841/xslF345X03/form4a.xml
+https://www.sec.gov/Archives/edgar/data/66740/000112760213004820/xslF345X03/form4.xml
+
+7. This amendment doesn't match because the starting point of the form 4 was wrong, this may warrant checking for prior 4 starting balance (which wouldn't have worked in this case because the prior 4 was also amended and the amendment is disastrously unparseable) or for checking for all items matching except ending balance.  
+https://www.sec.gov/Archives/edgar/data/1467858/000146785814000045/xslF345X03/wf-form4_139223720902232.xml
+https://www.sec.gov/Archives/edgar/data/1467858/000146785814000075/xslF345X03/wf-form4a_139396737129127.xml
+A shortcut to this functionality would be to track adjusting transactions used to make balances roll.  If an adjustment is made and then unmade (like add 1600 shares, then subtract 1600 shares), this may indicate that there was a wrong balance in a form.  Unfortunately this method only corrects after a subsequent 4, and will miss the correcting 4/A (which often will come first)
+
+For an example where order is switched in the amendment:
+https://www.sec.gov/Archives/edgar/data/66740/000112760210014377/xslF345X03/form4a.xml
+https://www.sec.gov/Archives/edgar/data/66740/000112760210014024/xslF345X03/form4.xml
+
