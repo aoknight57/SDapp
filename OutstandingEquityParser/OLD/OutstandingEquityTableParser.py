@@ -84,7 +84,7 @@ class MyHTMLParser(HTMLParser):
 				self.rowstorage.append("")
 			else:
 				self.rowstorage.append(self.cell)
-			self.cell = ""
+			self.cell == ""
 #this appends data into the list
 	def handle_data(self, data):
 		#This was pulling out placeholders, but including placeholders may be 
