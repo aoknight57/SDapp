@@ -1,0 +1,53 @@
+CIK: 0000051143
+Proxy Outstanding Equity Parser Results
+--------------------------------------------------------
+Option Balances:
+1. name
+2. number of securities underlying unexercised options # exercisable
+3. number of securities underlying unexercised options # unexercisable
+4. equity incentive plan awards: number of securities underlying unexercised unearned options #
+5. option exercise price $
+6. option expiration date
+['V.M. Rometty', 30369.0, 0.0, 'N/A', 105.96, '02/23/2014']
+['V.M. Rometty', 25680.0, 0.0, 'N/A', 101.33, '03/07/2015']
+['V.M. Rometty', 1998.0, 0.0, 'N/A', 92.12, '03/07/2015']
+['V.M. Rometty', 23518.0, 0.0, 'N/A', 92.51, '07/25/2015']
+['V.M. Rometty', 21456.0, 0.0, 'N/A', 91.04, '05/07/2016']
+['S.J. Palmisano', 200000.0, 0.0, 'N/A', 101.33, '03/07/2015']
+['S.J. Palmisano', 30325.0, 0.0, 'N/A', 92.12, '03/07/2015']
+['S.J. Palmisano', 88130.0, 0.0, 'N/A', 91.04, '05/07/2016']
+['S.J. Palmisano', 63628.0, 0.0, 'N/A', 82.76, '05/07/2016']
+['S.J. Palmisano', 58264.0, 0.0, 'N/A', 102.8, '05/07/2017']
+['M.E. Daniels', 16168.0, 0.0, 'N/A', 92.51, '07/25/2015']
+['M.E. Daniels', 23321.0, 0.0, 'N/A', 91.04, '05/07/2016']
+--------------
+Equity Balances:
+1. name
+2. number of shares or units of stock that have not vested #
+3. market value of shares or units of stock that have not vested #
+['M. Loughridge', 16667.0, 3192564.0]
+['S.A. Mills', 22278.0, 4267351.0]
+['J.R. MacDonald', 7426.0, 1422450.0]
+--------------
+Incentive Plan Balances:
+1. name
+2. equity incentive plan awards: number of unearned shares, units or other rights that have not vested #
+3. equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $
+['V.M. Rometty', 45732.0, 8759965.0]
+['V.M. Rometty', 49020.0, 9389781.0]
+['V.M. Rometty', 75000.0, 14366250.0]
+['M. Loughridge', 45732.0, 8759965.0]
+['M. Loughridge', 39216.0, 7511825.0]
+['M. Loughridge', 35625.0, 6823969.0]
+['S.J. Palmisano', 170733.0, 32703906.0]
+['S.J. Palmisano', 137256.0, 26291387.0]
+['S.J. Palmisano', 150000.0, 28732500.0]
+['S.A. Mills', 39635.0, 7592084.0]
+['S.A. Mills', 34314.0, 6572847.0]
+['S.A. Mills', 37500.0, 7183125.0]
+['M.E. Daniels', 45732.0, 8759965.0]
+['M.E. Daniels', 49020.0, 9389781.0]
+['M.E. Daniels', 37500.0, 7183125.0]
+['J.R. MacDonald', 36587.0, 7008240.0]
+['J.R. MacDonald', 30393.0, 5821779.0]
+['J.R. MacDonald', 30750.0, 5890163.0]

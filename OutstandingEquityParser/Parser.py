@@ -293,11 +293,16 @@ def tiebreakermatchbuilder(matchindiceslist, table):
 			bestindices.append(bestmatch)
 		else:
 			bestindices.append(matchindices[0])
+	if len(bestindices) < 10:
+		for x in range(10-len(bestindices)):
+			bestindices.append(0)
 	return bestindices
 
 def fillinmissingnames(bestindices, table, lasttitlerow):	
+	# try: 
 	nameindex = bestindices[0]
-
+	# except: 
+		# return table
 	for row in table:
 		if row == []:
 			break
@@ -442,6 +447,7 @@ def tabletobalances(filename):
 	print '--------------'
 	for row in filerincentiveplanbalances:
 		print row
+	return fileroptionbalances, filerequitybalances, filerincentiveplanbalances, tablewithnames
 
 
 def filemapper():
@@ -580,7 +586,40 @@ htmlmap = filemapper()
 
 for htmlfile in htmlmap:
 	print htmlfile
-	tabletobalances(htmlfile)
+	fileroptionbalances, filerequitybalances, filerincentiveplanbalances, tablewithnames = tabletobalances(htmlfile)
+	CIK = htmlfile[len(htmlfile)-14:len(htmlfile)-4]
+	print CIK
+	target = open(MainFolderLocation + 'Output/CIK' + CIK + '.txt', 'w')
+	print>>target, 'CIK:', CIK
+	print>>target, 'Proxy Outstanding Equity Parser Results'
+	print>>target, '--------------------------------------------------------'
+	# for row in tablewithnames:
+	# 	print>>target, row
+	# print>>target, '--------------'
+	print>>target, "Option Balances:"
+	print>>target, "1. name"
+	print>>target, "2. number of securities underlying unexercised options # exercisable"
+	print>>target, "3. number of securities underlying unexercised options # unexercisable" 
+	print>>target, "4. equity incentive plan awards: number of securities underlying unexercised unearned options #"
+	print>>target, "5. option exercise price $"
+	print>>target, "6. option expiration date"
+	for row in fileroptionbalances:
+		print>>target, row
+	print>>target, '--------------'
+	print>>target, "Equity Balances:"
+	print>>target, "1. name"
+	print>>target, "2. number of shares or units of stock that have not vested #"
+	print>>target, "3. market value of shares or units of stock that have not vested #"
+	for row in filerequitybalances:
+		print>>target, row
+	print>>target, '--------------'
+	print>>target, "Incentive Plan Balances:"
+	print>>target, "1. name"
+	print>>target, "2. equity incentive plan awards: number of unearned shares, units or other rights that have not vested #"
+	print>>target, "3. equity incentive plan awards: market or payout value of unearned shares, units or other rights that have not vested $"
+	for row in filerincentiveplanbalances:
+		print>>target, row
+	
 
 # Below is for testing the parser on a simple table
 # htmlfile = open('basictable.html', 'r')
