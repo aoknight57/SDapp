@@ -1,6 +1,7 @@
 from HTMLParser import HTMLParser
 import os
 
+MainFolderLocation = os.getcwd() + "/"
 # the short explanation of how the TableParse class works is that it reads each
 # character in a string of an html table and detects: start tags (with 
 # colspans/rowspans which are basically just merged cells), end tags, and data. 
@@ -26,19 +27,19 @@ class TableParse(HTMLParser):
         if tag == 'td':
         	self.column += 1
 	        # below adds colspans, rowspans or both
+        	self.cellrs = 0
+        	self.cellrsrange = 0
+        	self.cellcsrange = 0
+        	self.cellcs = 0	        
 	        for attr in attrs:
-	        	self.cellrs = 0
-	        	self.cellrsrange = 0
-	        	self.cellcsrange = 0
-	        	self.cellcs = 0
-	        	if attr[0] == 'rowspan':
+	        	if attr[0].lower() == 'rowspan':
 	        		self.spans.append(['r', 
 	        						   self.column, 
 	        						   self.row, 
 	        						   int(attr[1])])
 	        		self.cellrs += 1
 	        		self.cellrsrange = int(attr[1])
-	        	if attr[0] == 'colspan':
+	        	if attr[0].lower() == 'colspan':
 	        		self.spans.append(['c', 
 	        						   self.column, 
 	        						   self.row, 
@@ -47,23 +48,31 @@ class TableParse(HTMLParser):
 	        		self.cellcsrange = int(attr[1])
 
 	        	# if there is a colspan and a rowspan, this creates a box in
-	        	# html; this fills in more colspans to complete the box
-	        	if self.cellrs != 0 and self.cellcs != 0:
-	        		for x in range(1,self.cellrsrange):
-	        			self.spans.append(['c', 
-	        							   self.column, 
-	        							   self.row + x, 
-	        							   self.cellcsrange])
+	        	# html; this fills in more rowspans to complete the box
+	        	if self.cellrs == 1 and self.cellcs == 1:
+	        		for x in range(1, self.cellcsrange):
+	        			self.spans.append(['r', 
+	        							   self.column + x, 
+	        							   self.row, 
+	        							   self.cellrsrange])
+	        		cellcs = 0
+	        		cellrs = 0
 
+	       
+	        # self.spans.sort(key=lambda x: x[1])
 	        # this adds a spacer if there is a rowspan running through
-	        for span in self.spans:
-	        	if span[0] == 'r':
-	        		if self.column == span[1] and \
-	        		   self.row > span[2] and \
-	        		   self.row < span[2] + span[3]:
-	        			# self.urrow.append('<rowspan>')
-	        			self.urrow.append(span[4])
-	        			self.column += 1
+	        # for span in self.spans:
+	        # 	if span[0] == 'r':
+	        # 		if self.column == span[1] and \
+	        # 		   self.row > span[2] and \
+	        # 		   self.row < span[2] + span[3]:
+	        # 			# self.urrow.append('<rowspan>')
+	        # 			# try:
+        	# 			self.urrow.append('')
+	        # 			# except:
+	        # 			# 	self.urrow.append('span data error')
+	        # 			self.column += 1
+
 
     # this next part assembles a table as it hits end tags and inserts data 
     # into any spans that were detected
@@ -85,6 +94,18 @@ class TableParse(HTMLParser):
 	        		else:
 		        		span.append(self.cell)
 		    # Below adds a spacer if there is a colspan at this spot 
+
+	        for span in self.spans:
+	        	if span[0] == 'r':
+	        		if self.column == span[1] and \
+	        		   self.row > span[2] and \
+	        		   self.row < span[2] + span[3]:
+	        			# self.urrow.append('<rowspan>')
+	        			# try:
+        				self.urrow.insert(self.column-1,'')
+	        			# except:
+	        			# 	self.urrow.append('span data error')
+	        			self.column += 1
 	        for span in self.spans:
 	        	if span[0] == 'c' and \
 	        	   self.row == span[2] and \
@@ -93,6 +114,8 @@ class TableParse(HTMLParser):
 	        			# self.urrow.append('<colspan>')
 	        			self.urrow.append(span[4])
 	        			self.column += 1
+
+
 	        self.cell = ''
 	# Here is how, char by char each cell is compiled
     def handle_data(self, data):
@@ -157,15 +180,18 @@ def findtitlerows(table):
 		rowstrlengths.append(strlengths)
 		strlengths = 0
 	lasttitlerow = 0
-	for index in range(6):
+	for index in range(min(6, len(rowstrlengths))):
 		if rowstrlengths[index] > titlerowminscore:
 			lasttitlerow = index	
 	return lasttitlerow
 
 def jointitlerows(table, lasttitlerow):
 	titlerows = []
-	for x in range(lasttitlerow+1):
-		titlerows.append(table[x])
+	for x in range(min(lasttitlerow+1, len(table))):
+		row = []
+		for cell in table[x]:
+			row.append(str(cell))
+		titlerows.append(row)
 
 
 	titlelist = [''.join(x) for x in zip(*titlerows)]
@@ -199,6 +225,7 @@ def scanner(originalstring, findstring):
 	return indices
 
 def targetcategorymatch(targetcategory, title):
+
 	targetcategorymatch = 0
 	targetcategorylength = ''.join(targetcategory)
 	for word in targetcategory:
@@ -227,6 +254,8 @@ def matchmatrixbuilder(targetcategories, proxytitles):
 def matchindexbuilder(matchmatrix):
 	matchindiceslist = []
 	for row in matchmatrix:
+		if row == []:
+			break
 		match = max(row)
 		matchindices = []
 		for x in range(len(row)):
@@ -254,10 +283,11 @@ def tiebreakermatchbuilder(matchindiceslist, table):
 	flipdata = map(list, zip(*table))
 	bestindices = []
 	for matchindices in matchindiceslist:
-		if len(matchindices) > 1:
+		if len(matchindices) > 1 and len(flipdata) != 0:
 			matchindexscores = {}
 			for index in matchindices:
 				count = sum(1 for something in flipdata[index] if something)
+				
 				matchindexscores[index] = count
 			bestmatch = max(key for key, score in matchindexscores.iteritems())
 			bestindices.append(bestmatch)
@@ -269,12 +299,16 @@ def fillinmissingnames(bestindices, table, lasttitlerow):
 	nameindex = bestindices[0]
 
 	for row in table:
-		if row[0] == '' and table.index(row) > lasttitlerow + 1:
-			row[0] = lastrow[0] 
+		if row == []:
+			break
+		if row[nameindex] == '' and table.index(row) > lasttitlerow + 1:
+			row[nameindex] = lastrow[nameindex] 
 		lastrow = row
 	for row in table:
-		if 'total' in row[0].lower() and len(row[0]) < 10:
-			row[0] = ''
+		if row == []:
+			break
+		if 'total' in str(row[nameindex]).lower() and len(row[nameindex]) < 10:
+			row[nameindex] = ''
 	return table
 
 def splitindicesbytype(bestindices):
@@ -288,13 +322,45 @@ def extractbalancesbytype(optionindices, equityindices, incentiveplanindices, da
 	filerequitybalances = []
 	filerincentiveplanbalances = []
 	for row in datatable:
-		if not any(row[optionindex] == '' for optionindex in optionindices):
-			fileroptionbalances.append([row[optionindex] for optionindex in optionindices])
+		if row == []:
+			break
+		if row[optionindices[0]] != '' and row[optionindices[4]] != '' and row[optionindices[5]] != '':
+		
+			if len(str(row[optionindices[1]])) < 14 and len(str(row[optionindices[2]])) < 14 and len(str(row[optionindices[3]])) < 14 and len(str(row[optionindices[4]])) < 14:
+				fileroptionbalances.append([row[optionindex] for optionindex in optionindices])
 		if not any(row[equityindex] == '' for equityindex in equityindices):
-			filerequitybalances.append([row[equityindex] for equityindex in equityindices])
+			if len(str(row[equityindices[1]])) < 14 and len(str(row[equityindices[2]])) < 14:
+				filerequitybalances.append([row[equityindex] for equityindex in equityindices])
 		if not any(row[incentiveplanindex] == '' for incentiveplanindex in incentiveplanindices):
-			filerincentiveplanbalances.append([row[incentiveplanindex] for incentiveplanindex in incentiveplanindices])	
+			if len(str(row[incentiveplanindices[1]])) < 14 and len(str(row[incentiveplanindices[2]])) < 14:
+				filerincentiveplanbalances.append([row[incentiveplanindex] for incentiveplanindex in incentiveplanindices])	
 	return fileroptionbalances, filerequitybalances, filerincentiveplanbalances
+
+def breakglass(formattedtable, lasttitlerow):
+	bestindices = [0, 1, 2, 0, 3, 4, 5, 6, 7, 8]
+	for row in formattedtable:
+		for cell in row:
+			if cell < 0 and cell > -20:
+				cell = ''
+	
+	newtable = formattedtable[lasttitlerow + 1:]
+	lasttitlerow = -1
+	formattedtable = newtable
+	newtable = []
+	for row in formattedtable:
+		if not all(x == '' for x in row):
+			newtable.append(row)
+	formattedtable = newtable
+	flipdata = map(list, zip(*formattedtable))
+	newtable = []
+	for row in flipdata:
+		if not all(x == '' for x in row):
+			newtable.append(row) 
+	# print flipdata
+	# print emptyindices
+	formattedtable = map(list, zip(*newtable))
+	return formattedtable, lasttitlerow, bestindices
+
 
 def tabletobalances(filename):
 	htmlfile = open(filename, 'r')
@@ -303,13 +369,27 @@ def tabletobalances(filename):
 	htmlfile.close()
 
 	newtable = parser.urtable
+	badrowremover = []
+	for row in newtable:
+		if row != []:
+			badrowremover.append(row)
+	maxrowlen = 0
+
+	# repairs poorly formed html tables by filling unfinished rows with blanks
+	for row in badrowremover:
+		if len(row) > maxrowlen:
+			maxrowlen = len(row)
+	for row in badrowremover:
+		if len(row) < maxrowlen:
+			for x in range(maxrowlen-len(row)):
+				row.append('')
 	y = []
 	for row in newtable:
 		y.append(len(row))
 
 
 	# below creates float values, where possible, 
-	formattedtable = numformat(newtable)
+	formattedtable = numformat(badrowremover)
 	# Lets find the table heading
 	lasttitlerow = findtitlerows(formattedtable)
 	proxytitles = jointitlerows(formattedtable, lasttitlerow)
@@ -327,6 +407,13 @@ def tabletobalances(filename):
 	matchindiceslist = matchindexbuilder(matchmatrix)
 	# is there a tie?
 	bestindices = tiebreakermatchbuilder(matchindiceslist, formattedtable)
+	# In case of disaster [Ford's proxy statements, which are unparseable]
+	if bestindices == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
+		formattedtable, lasttitlerow, bestindices = breakglass(formattedtable, lasttitlerow)
+		
+
+
+
 	# fill in omitted names of individuals reported based on preceding lines
 	tablewithnames = fillinmissingnames(bestindices, formattedtable, lasttitlerow)
 	# print bestindices
@@ -340,7 +427,12 @@ def tabletobalances(filename):
 	# for row in datatable:
 		# print row
 	fileroptionbalances, filerequitybalances, filerincentiveplanbalances = extractbalancesbytype(optionindices, equityindices, incentiveplanindices, datatable)
-
+	
+	print '--------------------------------------------------------'
+	for row in tablewithnames:
+		print row, len(row)
+	print '--------------'
+	print bestindices
 	print '--------------'
 	for row in fileroptionbalances:
 		print row
@@ -352,7 +444,150 @@ def tabletobalances(filename):
 		print row
 
 
+def filemapper():
+	import os
+	htmldirectory = []
+	for root, dirs, files in os.walk (MainFolderLocation + "ScriptTables"):
+		for file in files:
+			if file.endswith('.txt'):
+				htmldirectory.append(os.path.join(root, file))
+	return htmldirectory
+
+def rawfilemapper():
+	import os
+	rawfiledirectory = []
+	for root, dirs, files in os.walk (MainFolderLocation + "testrawtext"):
+		for file in files:
+			if file.endswith('.txt'):
+				rawfiledirectory.append(os.path.join(root, file))
+	return rawfiledirectory
 
 
+CIKs = []
+TablesFromFiles = []
+rawfilemap = rawfilemapper()
+for rawfile in rawfilemap:
+	f = open(rawfile, 'r')
+	filestring = f.read()
+	lowerfilestring = filestring.lower()
+	tablestarts = scanner(lowerfilestring, "<table")
+	tableends = scanner(lowerfilestring, "</table>")
+#	print len(tablestarts)
+	rawfiletables = []
+	for i in range(len(tablestarts)):
+		rawfiletables.append(filestring[\
+			tablestarts[i]:(tableends[i]+len("</table>"))])
+#	print tables
+	parsedfiletables = []
+	for table in rawfiletables:
+		parser = TableParse()
+		parser.feed(table)
+		parsedtable = parser.urtable
+		parsedfiletables.append(parsedtable) 
 
-tabletobalances('file10000051143.txt')
+	tabletitlefinder = scanner(lowerfilestring, "outstanding equity awards")
+#	print tabletitlefinder
+	
+
+	tablecounts = []
+	for table in rawfiletables:
+		matchcount = 0.0
+		for titlelocation in tabletitlefinder:
+			if abs(tablestarts[rawfiletables.index(table)] - titlelocation) \
+			< 1000:
+				matchcount += 1000
+
+		tablecounts.append(matchcount)
+	wordmatchqualtable = []
+	wordmatchqualrow = []
+	tablematchquality = []
+	for table in parsedfiletables:
+		lasttitlerow = findtitlerows(table)
+		proxytitles = jointitlerows(table, lasttitlerow)
+		# print proxytitles
+		# print columnlist()
+		targetcategories = columnlist()
+		targetcategoriesmatchmatrix = []
+
+		#Below loops build a matrix of matches for each category
+		matchmatrix = matchmatrixbuilder(targetcategories, proxytitles)
+		# print table
+		# print proxytitles
+		# print matchmatrix
+		tablechoicescores = []
+		for row in matchmatrix:
+			# print row
+			try:
+				tablechoicescores.append(max(row))
+			except:
+				tablechoicescores.append(0)
+		maxrow = 0
+		for row in table:
+			if len(row) > maxrow:
+				maxrow = len(row)
+		tablelen = len(table)
+		if tablelen < 4:
+			tablechoicescores.append(-20)
+		if maxrow < 8:
+			tablechoicescores.append(-20)
+
+		wordmatchqualtable.append(sum(tablechoicescores))
+	# print wordmatchqualtable
+	# print len(wordmatchqualtable)
+	# print tablecounts
+	# print len(tablecounts)
+	for i in range(len(tablecounts)):
+		tablecounts[i] += wordmatchqualtable[i]*(200)
+
+
+#	print tablecounts
+
+	for cell in tablecounts:
+		bestmatchscore = max(tablecounts)
+		bestmatchindex = tablecounts.index(bestmatchscore)
+#	print bestmatchscore
+#	print bestmatchindex
+#	print len(tablecounts)
+#	print len(rawfiletables)
+#	print rawfiletables[bestmatchindex]
+#	print rawfiletables[bestmatchindex]
+
+	CIKfindstart = lowerfilestring.find("central index key")
+#	print "CIK Findstart", CIKfindstart
+	searchrange = 28
+	numcount = 0
+	for i in range(CIKfindstart, CIKfindstart + searchrange):
+		if isfloat(lowerfilestring[i:i+1]):
+			numcount += 1
+
+#	print "numcount", numcount
+	CIK = lowerfilestring[(CIKfindstart + searchrange - numcount):\
+						  (CIKfindstart + searchrange - numcount + 10)]
+	CIKs.append(CIK)
+	TablesFromFiles.append([rawfiletables[bestmatchindex], CIK])
+#	print lowerfilestring.find()
+#print TablesFromFiles[2][0]
+filecount = 1
+for item in TablesFromFiles:
+	target = open((MainFolderLocation + "ScriptTables/" + "file" + \
+				  str(filecount) + item[1] + ".txt"), 'w')
+	target.truncate()
+	filecount += 1
+	print>>target, TablesFromFiles[TablesFromFiles.index(item)][0]
+	target.close()
+
+htmlmap = filemapper()
+
+for htmlfile in htmlmap:
+	print htmlfile
+	tabletobalances(htmlfile)
+
+# Below is for testing the parser on a simple table
+# htmlfile = open('basictable.html', 'r')
+# parser = TableParse()
+# parser.feed(htmlfile.read())
+# htmlfile.close()
+
+# newtable = parser.urtable
+# for row in newtable:
+# 	print len(row), row 
