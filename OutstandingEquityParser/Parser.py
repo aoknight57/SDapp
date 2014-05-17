@@ -26,7 +26,7 @@ class TableParse(HTMLParser):
         if tag == 'tr':
             self.column = 0
             self.row += 1
-        if tag == 'td':
+        if tag == 'td' or tag == 'th':
             self.column += 1
             # below adds colspans, rowspans or both
             self.cellrs = 0
@@ -80,7 +80,7 @@ class TableParse(HTMLParser):
         if tag == 'tr':
             self.urtable.append(self.urrow)
             self.urrow = []
-        if tag == 'td':
+        if tag == 'td' or tag == 'th':
             if self.cell == '':
                 self.urrow.append('')
             else:
@@ -102,7 +102,7 @@ class TableParse(HTMLParser):
                        self.row < span[2] + span[3]:
                         # self.urrow.append('<rowspan>')
                         # try:
-                        self.urrow.insert(self.column-1, '')
+                        self.urrow.insert(self.column - 1, '')
                         # except:
                         #   self.urrow.append('span data error')
                         self.column += 1
@@ -121,6 +121,8 @@ class TableParse(HTMLParser):
     def handle_data(self, data):
         if data is not None:  # and data != '$':
             self.cell += data.strip()
+        # if data is '-':
+            # self.cell += '-'
 
 
 # This class is useful for storing and retrieving data tied to coordinates in
@@ -162,6 +164,8 @@ def numformat(table):
                                     replace(')', '')))
             elif cell == '$':
                 newrow.append('')
+            elif cell == '-':
+                newrow.append(0)
             else:
                 newrow.append(cell)
         newtable.append(newrow)
@@ -171,11 +175,10 @@ def numformat(table):
 def findtitlerows(table):
     rowstrlengths = []
     strlengths = 0
-    floatpenalty = 20  # this is an arbitrary value which reflects that
+    floatpenalty = 30  # this is an arbitrary value which reflects that
     # it is unlikely that a title row will include many floats
     titlerowminscore = 0
     for row in table:
-
         for cell in row:
             if not isfloat(cell):
                 strlengths += len(cell)
@@ -184,9 +187,17 @@ def findtitlerows(table):
         rowstrlengths.append(strlengths)
         strlengths = 0
     lasttitlerow = 0
-    for index in range(min(6, len(rowstrlengths))):
-        if rowstrlengths[index] > titlerowminscore:
+    cumulativescore = 0
+    maxcumulativescore = 0
+    listsofar = []
+    for index in range(min(9, len(rowstrlengths))):
+        listsofar.append(rowstrlengths[index])
+        cumulativescore = sum(listsofar)
+        if cumulativescore > maxcumulativescore and \
+           cumulativescore > titlerowminscore:
             lasttitlerow = index
+        if cumulativescore > maxcumulativescore:
+            maxcumulativescore = cumulativescore
     return lasttitlerow
 
 
@@ -280,7 +291,10 @@ def matchindexbuilder(matchmatrix):
         matchindices = []
         for x in range(len(row)):
             if row[x] == match:
-                matchindices.append(x)
+                if row[x] > .65:
+                    matchindices.append(x)
+        if matchindices == []:
+            matchindices.append(None)
         matchindiceslist.append(matchindices)
 
     return matchindiceslist
@@ -347,69 +361,102 @@ def splitindicesbytype(bestindices):
     return optionindices, equityindices, incentiveplanindices
 
 
+# The below functions are used to select what data from table is allowed into
+# the results table based on cleanness.
+def pullentry(cellindex, row):
+    if cellindex is None:
+        return 'No Match'
+    if cellindex is not None:
+        return row[cellindex]
+
+
+def sufficiencytester(cellindex, row, maxlen):
+    sufficient = 0
+    if len(str(pullentry(cellindex, row))) == 'No Match':
+        sufficient = 1
+    if len(str(pullentry(cellindex, row))) != 'No Match':
+        if len(str(pullentry(cellindex, row))) < maxlen:
+            sufficient = 1
+    return sufficient
+
+
+def pulloptionindices(optionindices, row):
+    maxlen = 14
+    results = []
+    if optionindices[0] is None or\
+       optionindices[4] is None or\
+       optionindices[5] is None:
+        return None
+    if row[optionindices[0]] == '' or\
+       row[optionindices[4]] == '' or\
+       row[optionindices[5]] == '':
+        return None
+    if sufficiencytester(optionindices[1], row, maxlen) +\
+       sufficiencytester(optionindices[2], row, maxlen) +\
+       sufficiencytester(optionindices[3], row, maxlen) +\
+       sufficiencytester(optionindices[4], row, maxlen) == 4:
+        results = [pullentry(optionindex, row) for
+                   optionindex in optionindices]
+        return results
+
+
+def pullequityindices(equityindices, row):
+    maxlen = 14
+    results = []
+    if any(equityindex is None for equityindex in equityindices):
+        return None
+    if any(row[equityindex] is '' for equityindex in equityindices):
+        return None
+    if sufficiencytester(equityindices[1], row, maxlen) +\
+       sufficiencytester(equityindices[1], row, maxlen) == 2:
+        results = [pullentry(equityindex, row) for
+                   equityindex in equityindices]
+        return results
+
+
+def pullincentiveplanindices(incentiveplanindices, row):
+    maxlen = 14
+    results = []
+    if any(incentiveplanindex is None for incentiveplanindex in
+           incentiveplanindices):
+        return None
+    if any(row[incentiveplanindex] is '' for incentiveplanindex in
+           incentiveplanindices):
+        return None
+    if sufficiencytester(incentiveplanindices[1], row, maxlen) +\
+       sufficiencytester(incentiveplanindices[1], row, maxlen) == 2:
+        results = [pullentry(incentiveplanindex, row) for
+                   incentiveplanindex in incentiveplanindices]
+        return results
+
+
 def extractbalancesbytype(optionindices, equityindices, incentiveplanindices,
                           datatable):
     fileroptionbalances = []
     filerequitybalances = []
     filerincentiveplanbalances = []
+
     for row in datatable:
         if row == []:
             break
-        if row[optionindices[0]] != '' and\
-           row[optionindices[4]] != '' and\
-           row[optionindices[5]] != '':
+        optionrowresult = pulloptionindices(optionindices, row)
+        if optionrowresult is not None:
+            fileroptionbalances.append(optionrowresult)
+        equityrowresult = pullequityindices(equityindices, row)
+        if equityrowresult is not None:
+            filerequitybalances.append(equityrowresult)
+        incentiveplanrowresult = pullincentiveplanindices(incentiveplanindices,
+                                                          row)
+        if incentiveplanrowresult is not None:
+            filerincentiveplanbalances.append(incentiveplanrowresult)
 
-            if len(str(row[optionindices[1]])) < 14 and\
-               len(str(row[optionindices[2]])) < 14 and\
-               len(str(row[optionindices[3]])) < 14 and\
-               len(str(row[optionindices[4]])) < 14:
-                fileroptionbalances.append([row[optionindex] for
-                                            optionindex in optionindices])
-        if not any(row[equityindex] == '' for equityindex in equityindices):
-            if len(str(row[equityindices[1]])) < 14 and\
-               len(str(row[equityindices[2]])) < 14:
-                filerequitybalances.append([row[equityindex] for equityindex
-                                            in equityindices])
-        if not any(row[incentiveplanindex] == '' for incentiveplanindex in
-                   incentiveplanindices):
-            if len(str(row[incentiveplanindices[1]])) < 14 and\
-               len(str(row[incentiveplanindices[2]])) < 14:
-                filerincentiveplanbalances.append([row[incentiveplanindex] for
-                                                   incentiveplanindex in
-                                                   incentiveplanindices])
     return fileroptionbalances, filerequitybalances, filerincentiveplanbalances
-
-
-def breakglass(formattedtable, lasttitlerow):
-    bestindices = [0, 1, 2, 0, 3, 4, 5, 6, 7, 8]
-    for row in formattedtable:
-        for cell in row:
-            if cell < 0 and cell > -20:
-                cell = ''
-
-    newtable = formattedtable[lasttitlerow + 1:]
-    lasttitlerow = -1
-    formattedtable = newtable
-    newtable = []
-    for row in formattedtable:
-        if not all(x == '' for x in row):
-            newtable.append(row)
-    formattedtable = newtable
-    flipdata = map(list, zip(*formattedtable))
-    newtable = []
-    for row in flipdata:
-        if not all(x == '' for x in row):
-            newtable.append(row)
-    # print flipdata
-    # print emptyindices
-    formattedtable = map(list, zip(*newtable))
-    return formattedtable, lasttitlerow, bestindices
 
 
 def tabletobalances(filename):
     htmlfile = open(filename, 'r')
     parser = TableParse()
-    parser.feed(htmlfile.read())
+    parser.feed(htmlfile.read().replace('&#151;', '-'))
     htmlfile.close()
 
     newtable = parser.urtable
@@ -450,9 +497,9 @@ def tabletobalances(filename):
     # is there a tie?
     bestindices = tiebreakermatchbuilder(matchindiceslist, formattedtable)
     # In case of disaster [Ford's proxy statements, which are unparseable]
-    if bestindices == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
-        formattedtable, lasttitlerow, bestindices = \
-            breakglass(formattedtable, lasttitlerow)
+    # if bestindices == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
+        # formattedtable, lasttitlerow, bestindices = \
+            # breakglass(formattedtable, lasttitlerow)
 
     # fill in omitted names of individuals reported based on preceding lines
     tablewithnames = fillinmissingnames(bestindices, formattedtable,
@@ -475,6 +522,10 @@ def tabletobalances(filename):
     print '--------------------------------------------------------'
     for row in tablewithnames:
         print row, len(row)
+    for row in matchmatrix:
+        print row
+    print 'last title row:', lasttitlerow
+    print matchindiceslist
     print '--------------'
     print bestindices
     print '--------------'
