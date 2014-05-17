@@ -237,6 +237,14 @@ or other rights that have not vested #".split()
     return ColList
 
 
+def mode(list):
+    counts = {}
+    for item in list:
+        counts[item] = counts.get(item, 0) + 1
+    mode = max(k for k, v in counts.iteritems() if v != 0)
+    return mode
+
+
 def scanner(originalstring, findstring):
     indices = []
     startposition = 0
@@ -602,16 +610,9 @@ for rawfile in rawfilemap:
     for table in parsedfiletables:
         lasttitlerow = findtitlerows(table)
         proxytitles = jointitlerows(table, lasttitlerow)
-        # print proxytitles
-        # print columnlist()
         targetcategories = columnlist()
         targetcategoriesmatchmatrix = []
-
-        #Below loops build a matrix of matches for each category
         matchmatrix = matchmatrixbuilder(targetcategories, proxytitles)
-        # print table
-        # print proxytitles
-        # print matchmatrix
         tablechoicescores = []
         for row in matchmatrix:
             # print row
@@ -630,37 +631,35 @@ for rawfile in rawfilemap:
             tablechoicescores.append(-20)
 
         wordmatchqualtable.append(sum(tablechoicescores))
-    # print wordmatchqualtable
-    # print len(wordmatchqualtable)
-    # print tablecounts
-    # print len(tablecounts)
+
     for i in range(len(tablecounts)):
         tablecounts[i] += wordmatchqualtable[i]*(200)
-
-#   print tablecounts
     for cell in tablecounts:
         bestmatchscore = max(tablecounts)
         bestmatchindex = tablecounts.index(bestmatchscore)
-#   print bestmatchscore
-#   print bestmatchindex
-#   print len(tablecounts)
-#   print len(rawfiletables)
-#   print rawfiletables[bestmatchindex]
-#   print rawfiletables[bestmatchindex]
+    nextpageindex = -1
+    if bestmatchindex < len(rawfiletables):
+        if mode(rawfiletables[bestmatchindex]) ==\
+           mode(rawfiletables[bestmatchindex + 1]):
+            nextpageindex = bestmatchindex + 1
 
     CIKfindstart = lowerfilestring.find("central index key")
-#   print "CIK Findstart", CIKfindstart
     searchrange = 28
     numcount = 0
     for i in range(CIKfindstart, CIKfindstart + searchrange):
         if isfloat(lowerfilestring[i:i+1]):
             numcount += 1
 
-#   print "numcount", numcount
     CIK = lowerfilestring[(CIKfindstart + searchrange - numcount):
                           (CIKfindstart + searchrange - numcount + 10)]
     CIKs.append(CIK)
-    TablesFromFiles.append([rawfiletables[bestmatchindex], CIK])
+    appendtable = ''
+    if nextpageindex == -1:
+        appendtable = rawfiletables[bestmatchindex]
+    if nextpageindex != -1:
+        appendtable = rawfiletables[bestmatchindex] +\
+            rawfiletables[nextpageindex]
+    TablesFromFiles.append([appendtable, CIK])
 #   print lowerfilestring.find()
 #print TablesFromFiles[2][0]
 filecount = 1
