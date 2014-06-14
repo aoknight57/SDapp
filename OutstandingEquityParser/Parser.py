@@ -151,6 +151,28 @@ def isfloat(data):
     return a
 
 
+def removefn(table):
+    newtable = []
+    newrow = []
+    for row in table:
+        for entry in row:
+            entry = str(entry)
+            while entry.rfind('(') > 0 and entry.rfind(')') > 0 and\
+                    entry.rfind(')') > entry.rfind('(') and\
+                    (entry.rfind(')') - entry.rfind('(')) < 3:
+                entry = entry.strip()
+                openp = entry.rfind('(')
+                closep = entry.rfind(')')
+                fn = entry[openp:closep+1]
+                entry = entry.replace(fn, '').strip()
+            if isfloat(entry):
+                entry = float(entry)
+            newrow.append(entry)
+        newtable.append(newrow)
+        newrow = []
+    return newtable
+
+
 def numformat(table):
     newtable = []
     for row in table:
@@ -190,7 +212,7 @@ def findtitlerows(table):
     cumulativescore = 0
     maxcumulativescore = 0
     listsofar = []
-    for index in range(min(9, len(rowstrlengths))):
+    for index in range(min(12, len(rowstrlengths))):
         listsofar.append(rowstrlengths[index])
         cumulativescore = sum(listsofar)
         if cumulativescore > maxcumulativescore and \
@@ -270,7 +292,7 @@ def targetcategorymatch(targetcategory, title):
         # ('unexercisable' v. 'exercisable').
         if word == 'exercisable':
             targetcategorymatch -= len(scanner(title.lower(),
-                                       'unexercisable'))*len('unexercisable')
+                                       'unexercisable'))*50
     return round(float(targetcategorymatch) /
                  max(float(1), float(len(targetcategorylength))), 4)
      #match quality above
@@ -343,6 +365,8 @@ def tiebreakermatchbuilder(matchindiceslist, table):
 
 
 def fillinmissingnames(bestindices, table, lasttitlerow):
+    if bestindices[0] is None:
+        return table
     # try:
     nameindex = bestindices[0]
     # except:
@@ -461,6 +485,20 @@ def extractbalancesbytype(optionindices, equityindices, incentiveplanindices,
     return fileroptionbalances, filerequitybalances, filerincentiveplanbalances
 
 
+def terminologyfixer(table):
+    replacementmatrix = []
+    replacementrows = []
+    for row in table:
+        for cell in row:
+            if isinstance(cell, basestring):
+                if cell.lower() == 'officer':
+                    cell = 'name'
+            replacementrows.append(cell)
+        replacementmatrix.append(replacementrows)
+        replacementrows = []
+    return replacementmatrix
+
+
 def tabletobalances(filename):
     htmlfile = open(filename, 'r')
     parser = TableParse()
@@ -488,6 +526,9 @@ def tabletobalances(filename):
 
     # below creates float values, where possible,
     formattedtable = numformat(badrowremover)
+    # Terminology conformer
+    formattedtable = terminologyfixer(formattedtable)
+    formattedtable = removefn(formattedtable)
     # Lets find the table heading
     lasttitlerow = findtitlerows(formattedtable)
     proxytitles = jointitlerows(formattedtable, lasttitlerow)
@@ -504,14 +545,15 @@ def tabletobalances(filename):
     matchindiceslist = matchindexbuilder(matchmatrix)
     # is there a tie?
     bestindices = tiebreakermatchbuilder(matchindiceslist, formattedtable)
-    # In case of disaster [Ford's proxy statements, which are unparseable]
-    # if bestindices == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
-        # formattedtable, lasttitlerow, bestindices = \
-            # breakglass(formattedtable, lasttitlerow)
 
     # fill in omitted names of individuals reported based on preceding lines
     tablewithnames = fillinmissingnames(bestindices, formattedtable,
                                         lasttitlerow)
+    # format missing names
+    if bestindices[0] is not None:
+        for row in tablewithnames:
+            row[bestindices[0]] = str(row[bestindices[0]]).replace('\n', ' ')
+
     # print bestindices
 
     optionindices, equityindices, incentiveplanindices = \
@@ -570,7 +612,29 @@ def rawfilemapper():
     return rawfiledirectory
 
 
+def fiscalyearpull(lowerfilestring):
+    FYfindstart = lowerfilestring.find('fiscal year end')
+    searchrange = 35
+    FiscalYearEnd = ""
+    for i in range(FYfindstart, FYfindstart + searchrange):
+        if isfloat(lowerfilestring[i:i + 1]):
+            FiscalYearEnd += lowerfilestring[i:i + 1]
+    months = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
+              'august', 'september', 'october', 'november', 'december']
+    findmonth = ''
+    if len(FiscalYearEnd) < 4:
+        for month in months:
+            if lowerfilestring.find(month, FYfindstart, FYfindstart
+               + searchrange) != -1:
+                findmonth = str(months.index(month) + 1)
+    if len(FiscalYearEnd) == 1:
+        FiscalYearEnd = '0' + FiscalYearEnd
+    if findmonth != '':
+        FiscalYearEnd = findmonth + FiscalYearEnd
+    return FiscalYearEnd
+
 CIKs = []
+FiscalYearEnds = []
 TablesFromFiles = []
 rawfilemap = rawfilemapper()
 for rawfile in rawfilemap:
@@ -601,7 +665,7 @@ for rawfile in rawfilemap:
         for titlelocation in tabletitlefinder:
             if abs(tablestarts[rawfiletables.index(table)] - titlelocation) \
                     < 1000:
-                matchcount += 1000
+                matchcount += 2000
 
         tablecounts.append(matchcount)
     wordmatchqualtable = []
@@ -640,47 +704,57 @@ for rawfile in rawfilemap:
     nextpageindex = -1
     if bestmatchindex < len(rawfiletables):
         if mode(rawfiletables[bestmatchindex]) ==\
-           mode(rawfiletables[bestmatchindex + 1]):
+           mode(rawfiletables[min(len(rawfiletables) - 1,
+                                  bestmatchindex + 1)]):
             nextpageindex = bestmatchindex + 1
 
     CIKfindstart = lowerfilestring.find("central index key")
     searchrange = 28
     numcount = 0
     for i in range(CIKfindstart, CIKfindstart + searchrange):
-        if isfloat(lowerfilestring[i:i+1]):
+        if isfloat(lowerfilestring[i:i + 1]):
             numcount += 1
 
     CIK = lowerfilestring[(CIKfindstart + searchrange - numcount):
                           (CIKfindstart + searchrange - numcount + 10)]
     CIKs.append(CIK)
+    FiscalYearEnd = fiscalyearpull(lowerfilestring)
+    FiscalYearEnds.append(FiscalYearEnd)
+    print CIK, FiscalYearEnd
     appendtable = ''
     if nextpageindex == -1:
         appendtable = rawfiletables[bestmatchindex]
     if nextpageindex != -1:
         appendtable = rawfiletables[bestmatchindex] +\
-            rawfiletables[nextpageindex]
-    TablesFromFiles.append([appendtable, CIK])
+            rawfiletables[min(len(rawfiletables)-1, nextpageindex)]
+    TablesFromFiles.append([appendtable, CIK, FiscalYearEnd])
+
+
 #   print lowerfilestring.find()
 #print TablesFromFiles[2][0]
 filecount = 1
 for item in TablesFromFiles:
     target = open((MainFolderLocation + "ScriptTables/" + "file" +
-                  str(filecount) + item[1] + ".txt"), 'w')
+                  str(filecount) + item[2] + item[1] + ".txt"), 'w')
     target.truncate()
     filecount += 1
     print>>target, TablesFromFiles[TablesFromFiles.index(item)][0]
     target.close()
 
 htmlmap = filemapper()
-
+filecount = 0
 for htmlfile in htmlmap:
+    filecount += 1
     print htmlfile
     fileroptionbalances, filerequitybalances, filerincentiveplanbalances,\
         tablewithnames = tabletobalances(htmlfile)
-    CIK = htmlfile[len(htmlfile)-14:len(htmlfile)-4]
+    CIK = htmlfile[len(htmlfile) - 14:len(htmlfile) - 4]
+    FiscalYearEnd = htmlfile[len(htmlfile) - 18:len(htmlfile) - 14]
     print CIK
-    target = open(MainFolderLocation + 'Output/CIK' + CIK + '.txt', 'w')
+    target = open(MainFolderLocation + 'Output/' + str(filecount) + 'CIK' +
+                  CIK + '.txt', 'w')
     print>>target, 'CIK:', CIK
+    print>>target, 'FYE:', FiscalYearEnd
     print>>target, 'Proxy Outstanding Equity Parser Results'
     print>>target, '--------------------------------------------------------'
     # for row in tablewithnames:
