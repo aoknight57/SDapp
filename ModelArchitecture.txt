@@ -13,7 +13,7 @@ Management
 	Class: Officer/Director/10% Owner/Other
 	CIK
 	Start Date
-	Current Holdings
+	has many holdings: stock (maybe class A stock/class B stock)/restricted stock units/options (of various vintages and strikes)
 	has many transactions
 
 Stock Price
