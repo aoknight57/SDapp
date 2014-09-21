@@ -184,7 +184,7 @@ if initializing == 'y':
 
 	with open("CIKsInit.txt") as infile:
 		for line in infile:
-			CIKsInit.append(line.strip())
+			CIKsInit.append(str(int(line.strip())))
 	print "Using initialization CIKs:", CIKsInit
 	print " "
 	# Makes the storage directories if they are missing/not yet created
@@ -205,7 +205,7 @@ if update == 'y':
 
 	with open("CIKsUpdate.txt") as infile:
 		for line in infile:
-			CIKsUpdate.append(line.strip())
+			CIKsUpdate.append(str(int(line.strip())))
 	print "Using update CIKs:", CIKsUpdate
 	print " "
 	# Makes the storage directories if they are missing/not yet created
