@@ -49,7 +49,7 @@ def processxml(cwd, formdir, CIKs):
                     revtargetstring = targetstring[::-1]
                     filingdatemarker = revtargetstring.find('/<')
                     newtargetstring = targetstring[:-filingdatemarker-2]\
-                        + '<dateandtime>'\
+                        + '    <dateandtime>'\
                         + filingdateandtime\
                         + '</dateandtime>\n'\
                         + targetstring[-filingdatemarker-2:]
